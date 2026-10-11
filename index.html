@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Página oficial de consulta do 2º Open de Tênis do Condomínio Vog Ville.">
+<meta name="description" content="Página oficial do 2º Open de Tênis do Condomínio Vog Ville.">
 <title>2º Open de Tênis — Vog Ville</title>
 
 <style>
@@ -14,7 +14,6 @@
   --gold: #d5a94c;
   --bg: #eef2f6;
   --ink: #17324d;
-  --white: #fff;
 }
 
 * { box-sizing: border-box; }
@@ -41,7 +40,6 @@ body {
 
 .top {
   background: var(--navy);
-  color: white;
   border-bottom: 4px solid var(--gold);
 }
 
@@ -53,7 +51,6 @@ body {
 .brand {
   display: block;
   width: 100%;
-  height: auto;
   max-height: 190px;
   object-fit: cover;
   object-position: center;
@@ -69,28 +66,42 @@ nav {
   border-bottom: 1px solid #d2dce5;
 }
 
-nav a {
+nav a,
+.button {
   display: inline-block;
+  text-align: center;
   text-decoration: none;
   font-size: 14px;
   font-weight: 700;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 11px 15px;
+  border-radius: 6px;
   border: 1px solid var(--green);
-  color: white;
+  color: #fff;
   background: var(--green);
+  cursor: pointer;
   transition: filter .15s, transform .15s;
 }
 
-nav a:hover {
+nav a:hover,
+.button:hover {
   filter: brightness(.92);
   transform: translateY(-1px);
 }
 
-nav a.active {
+nav a.active,
+.button.primary {
   background: #0e765f;
   border-color: #0e765f;
-  color: white;
+}
+
+.button.admin {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.button.scorekeeper {
+  background: #8a641b;
+  border-color: #8a641b;
 }
 
 main {
@@ -105,9 +116,16 @@ main {
   color: var(--navy);
 }
 
+.description {
+  margin: 0 0 12px;
+  line-height: 1.5;
+  color: #52687b;
+  font-size: 14px;
+}
+
 .panel {
   border: 1px solid #cbd7e2;
-  background: white;
+  background: #fff;
   border-radius: 7px;
   overflow: hidden;
   box-shadow: 0 1px 3px #102d4910;
@@ -120,8 +138,8 @@ main {
   flex-wrap: wrap;
   gap: 8px;
   padding: 13px 15px;
+  color: #fff;
   background: var(--navy);
-  color: white;
   border-bottom: 3px solid var(--gold);
 }
 
@@ -154,7 +172,6 @@ main {
   display: inline-block;
   border-radius: 50%;
   background: #55e3a0;
-  box-shadow: 0 0 0 3px #55e3a025;
 }
 
 .live-frame {
@@ -162,7 +179,7 @@ main {
   width: 100%;
   height: 650px;
   border: 0;
-  background: white;
+  background: #fff;
 }
 
 .sheet-frame {
@@ -171,18 +188,64 @@ main {
   height: calc(100vh - 250px);
   min-height: 620px;
   border: 0;
-  background: white;
+  background: #fff;
 }
 
 .section-block {
   margin-bottom: 22px;
 }
 
-.section-description {
-  margin: 0 0 10px;
+.access-panel {
+  margin: 18px 0 22px;
+  padding: 18px;
+  background: #fff;
+  border: 1px solid #d0dbe5;
+  border-top: 4px solid var(--green);
+  border-radius: 7px;
+}
+
+.access-panel h2 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 20px;
+}
+
+.access-panel > p {
+  margin: 0 0 15px;
   line-height: 1.5;
   color: #52687b;
   font-size: 14px;
+}
+
+.access-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.access-card {
+  padding: 15px;
+  border: 1px solid #d5dfe8;
+  border-radius: 7px;
+  background: #f8fafc;
+}
+
+.access-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+  font-size: 17px;
+}
+
+.access-card p {
+  min-height: 42px;
+  margin: 0 0 14px;
+  color: #52687b;
+  line-height: 1.45;
+  font-size: 13px;
+}
+
+.access-card .button {
+  width: 100%;
 }
 
 .info-grid {
@@ -193,7 +256,7 @@ main {
 }
 
 .info-card {
-  background: white;
+  background: #fff;
   border: 1px solid #d0dbe5;
   border-top: 4px solid var(--green);
   border-radius: 7px;
@@ -208,9 +271,6 @@ main {
 .info-card p {
   margin: 0;
   line-height: 1.5;
-}
-
-.placeholder {
   color: #5b6e80;
 }
 
@@ -234,9 +294,10 @@ footer {
     padding: 8px 5px;
   }
 
-  nav a {
+  nav a,
+  .button {
     font-size: 12px;
-    padding: 9px 10px;
+    padding: 10px;
   }
 
   main {
@@ -264,8 +325,13 @@ footer {
     min-height: 520px;
   }
 
+  .access-grid,
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .access-card p {
+    min-height: auto;
   }
 }
 </style>
@@ -285,6 +351,7 @@ footer {
 
   <nav aria-label="Menu principal">
     <a href="#tabela" class="active">Classificação e jogos</a>
+    <a href="#acessos">Painel de lançamento</a>
     <a href="#fotos">Fotos do torneio</a>
     <a href="#avisos">Avisos</a>
   </nav>
@@ -295,8 +362,8 @@ footer {
   <section id="tabela" class="section-block">
     <h1 class="section-title">Classificação, programação e resultados</h1>
 
-    <p class="section-description">
-      Acompanhe os resultados das partidas e consulte a programação e a classificação do torneio.
+    <p class="description">
+      Acompanhe os jogos e os resultados do 2º Open de Tênis do Condomínio Vog Ville.
     </p>
 
     <section class="panel section-block" id="placar">
@@ -317,8 +384,7 @@ footer {
         title="Placar ao vivo do Torneio Vog Ville"
         src="https://script.google.com/macros/s/AKfycbyz44hN3qnkrrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec?page=public"
         loading="eager"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
+        referrerpolicy="strict-origin-when-cross-origin">
       </iframe>
     </section>
 
@@ -326,13 +392,13 @@ footer {
       <div class="panel-heading">
         <div>
           <h2>📊 Classificação e programação</h2>
-          <p>Consulte as abas da planilha para ver os dados do torneio.</p>
+          <p>Consulte as abas da planilha para ver as informações do torneio.</p>
         </div>
       </div>
 
       <iframe
         class="sheet-frame"
-        title="Planilha de classificação, programação e resultados do Torneio Vog Ville"
+        title="Planilha de classificação, programação e resultados"
         src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml"
         loading="lazy"
         referrerpolicy="strict-origin-when-cross-origin">
@@ -340,19 +406,65 @@ footer {
     </section>
   </section>
 
+  <!-- ACESSOS PARA LANÇAMENTO DOS PONTOS -->
+  <section id="acessos" class="access-panel">
+    <h2>🔐 Área de lançamento de resultados</h2>
+
+    <p>
+      Escolha o acesso adequado para registrar os pontos das partidas.
+      Os dois botões abrem o painel de lançamento existente.
+    </p>
+
+    <div class="access-grid">
+
+      <div class="access-card">
+        <h3>👑 Administrador</h3>
+        <p>
+          Para organizar os jogos, acompanhar os resultados e realizar
+          os lançamentos como responsável pelo torneio.
+        </p>
+
+        <a
+          class="button admin"
+          href="https://script.google.com/macros/s/AKfycbyz44hN3qnkrrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec"
+          target="_blank"
+          rel="noopener noreferrer">
+          Abrir painel do administrador
+        </a>
+      </div>
+
+      <div class="access-card">
+        <h3>🎾 Apontador de pontos</h3>
+        <p>
+          Para outra pessoa responsável pela contagem registrar os pontos
+          e os resultados das partidas durante os jogos.
+        </p>
+
+        <a
+          class="button scorekeeper"
+          href="https://script.google.com/macros/s/AKfycbyz44hN3qnkrrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec"
+          target="_blank"
+          rel="noopener noreferrer">
+          Acessar como apontador
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <div class="info-grid">
 
     <section id="fotos" class="info-card">
       <h3>📸 Fotos do torneio</h3>
-      <p class="placeholder">
+      <p>
         O espaço para as fotos está pronto. Quando houver um álbum compartilhado,
-        o botão poderá direcionar diretamente para ele.
+        poderemos colocar aqui o link para as imagens.
       </p>
     </section>
 
     <section id="avisos" class="info-card">
       <h3>📢 Avisos</h3>
-      <p class="placeholder">
+      <p>
         Os comunicados do torneio serão publicados aqui.
         Consulte esta seção para acompanhar as atualizações.
       </p>
