@@ -1,41 +1,405 @@
+```html
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Página oficial de consulta do 2º Open de Tênis do Condomínio Vog Ville.">
 <title>2º Open de Tênis — Vog Ville</title>
+
 <style>
-:root{--navy:#102d49;--green:#138b75;--gold:#d5a94c;--bg:#eef2f6;--ink:#17324d;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:240px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
-.site-header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 3px 12px #102d4920}.top{background:var(--navy);color:white;border-bottom:4px solid var(--gold)}.wrap{width:min(1500px,100%);margin:auto}.brand{display:block;width:100%;height:auto;max-height:190px;object-fit:cover;object-position:center}
-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:#fff;border-bottom:1px solid #d2dce5}
-nav a,.action{display:inline-block;text-decoration:none;font-size:14px;font-weight:700;padding:10px 15px;border-radius:5px;border:1px solid var(--green);color:white;background:var(--green);transition:filter .15s,transform .15s}nav a:hover,.action:hover{filter:brightness(.92);transform:translateY(-1px)}nav a.active,.action.primary{background:#0e765f;border-color:#0e765f;color:white}
-main{width:min(1500px,100%);margin:0 auto;padding:12px}.section-title{margin:4px 0 10px;font-size:22px;color:var(--navy)}.table-actions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}.panel{border:1px solid #cbd7e2;background:white;border-radius:5px;overflow:hidden;box-shadow:0 1px 3px #102d4910}iframe{display:block;width:100%;height:calc(100vh - 250px);min-height:620px;border:0;background:white}
-.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.info-card{background:white;border:1px solid #d0dbe5;border-top:4px solid var(--green);border-radius:7px;padding:16px}.info-card h3{margin:0 0 8px;color:var(--navy)}.info-card p{margin:0;line-height:1.5}.placeholder{color:#5b6e80}.hidden{display:none}footer{text-align:center;padding:18px 10px;color:#65778a;font-size:12px}
-@media(max-width:700px){html{scroll-padding-top:170px}.brand{max-height:130px;object-fit:cover}nav{gap:6px;padding:8px 5px}nav a,.action{font-size:12px;padding:9px 10px}main{padding:8px 5px}.section-title{font-size:19px}iframe{height:78vh;min-height:520px}.info-grid{grid-template-columns:1fr}}
-</style></head>
+:root {
+  --navy: #102d49;
+  --green: #138b75;
+  --gold: #d5a94c;
+  --bg: #eef2f6;
+  --ink: #17324d;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 240px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #fff;
+  box-shadow: 0 3px 12px #102d4920;
+}
+
+.top {
+  background: var(--navy);
+  color: white;
+  border-bottom: 4px solid var(--gold);
+}
+
+.wrap {
+  width: min(1500px, 100%);
+  margin: auto;
+}
+
+.brand {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+  object-fit: cover;
+  object-position: center;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #d2dce5;
+}
+
+nav a,
+.action {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid var(--green);
+  color: white;
+  background: var(--green);
+  transition: filter .15s, transform .15s;
+}
+
+nav a:hover,
+.action:hover {
+  filter: brightness(.92);
+  transform: translateY(-1px);
+}
+
+nav a.active,
+.action.primary {
+  background: #0e765f;
+  border-color: #0e765f;
+  color: white;
+}
+
+main {
+  width: min(1500px, 100%);
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.section-title {
+  margin: 4px 0 10px;
+  font-size: 22px;
+  color: var(--navy);
+}
+
+.subsection-title {
+  margin: 0;
+  font-size: 19px;
+  color: var(--navy);
+}
+
+.panel {
+  border: 1px solid #cbd7e2;
+  background: white;
+  border-radius: 7px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px #102d4910;
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 13px 15px;
+  background: var(--navy);
+  color: white;
+  border-bottom: 3px solid var(--gold);
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.panel-heading p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  opacity: .9;
+}
+
+.live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #ffffff18;
+  border: 1px solid #ffffff50;
+  padding: 7px 10px;
+  border-radius: 20px;
+}
+
+.live-dot {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #55e3a0;
+  box-shadow: 0 0 0 3px #55e3a025;
+}
+
+.live-frame {
+  display: block;
+  width: 100%;
+  height: 650px;
+  border: 0;
+  background: white;
+}
+
+.sheet-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 250px);
+  min-height: 620px;
+  border: 0;
+  background: white;
+}
+
+.section-block {
+  margin-bottom: 22px;
+}
+
+.section-description {
+  margin: 0 0 10px;
+  line-height: 1.5;
+  color: #52687b;
+  font-size: 14px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid #d0dbe5;
+  border-top: 4px solid var(--green);
+  border-radius: 7px;
+  padding: 16px;
+}
+
+.info-card h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.info-card p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.placeholder {
+  color: #5b6e80;
+}
+
+footer {
+  text-align: center;
+  padding: 18px 10px;
+  color: #65778a;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  html { scroll-padding-top: 170px; }
+
+  .brand {
+    max-height: 130px;
+    object-fit: cover;
+  }
+
+  nav {
+    gap: 6px;
+    padding: 8px 5px;
+  }
+
+  nav a,
+  .action {
+    font-size: 12px;
+    padding: 9px 10px;
+  }
+
+  main {
+    padding: 8px 5px;
+  }
+
+  .section-title {
+    font-size: 19px;
+  }
+
+  .subsection-title {
+    font-size: 17px;
+  }
+
+  .panel-heading {
+    padding: 12px 10px;
+  }
+
+  .panel-heading h2 {
+    font-size: 16px;
+  }
+
+  .live-frame {
+    height: 680px;
+  }
+
+  .sheet-frame {
+    height: 78vh;
+    min-height: 520px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+
 <body>
+
 <div class="site-header">
-<div class="top"><div class="wrap"><img class="brand" src="logo-torneio.png" alt="Logo do 2º Open de Tênis do Condomínio Vog Ville"></div></div>
-<nav aria-label="Menu principal">
-<a href="#tabela" class="active" data-section="tabela">Classificação e jogos</a>
-<a href="#fotos" data-section="fotos">Fotos do torneio</a>
-<a href="#avisos" data-section="avisos">Avisos</a>
-</nav>
+  <div class="top">
+    <div class="wrap">
+      <img
+        class="brand"
+        src="logo-torneio.png"
+        alt="Logo do 2º Open de Tênis do Condomínio Vog Ville">
+    </div>
+  </div>
+
+  <nav aria-label="Menu principal">
+    <a href="#tabela" class="active" data-section="tabela">
+      Classificação e jogos
+    </a>
+    <a href="#fotos" data-section="fotos">
+      Fotos do torneio
+    </a>
+    <a href="#avisos" data-section="avisos">
+      Avisos
+    </a>
+  </nav>
 </div>
+
 <main>
-<section id="tabela">
-<h1 class="section-title">Classificação, programação e resultados</h1>
-<div class="panel"><iframe title="Planilha publicada do Torneio Vog Ville" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<p class="placeholder">Use as abas na parte inferior da planilha para alternar entre o painel, a programação, a classificação, os lançamentos e os participantes.</p>
-</section>
-<div class="info-grid">
-<section id="fotos" class="info-card"><h3>📸 Fotos do torneio</h3><p class="placeholder">O espaço para as fotos está pronto. Quando houver um álbum compartilhado, o botão poderá direcionar diretamente para ele.</p></section>
-<section id="avisos" class="info-card"><h3>📢 Avisos</h3><p class="placeholder">Os comunicados do torneio serão publicados aqui. Consulte esta seção para acompanhar atualizações.</p></section>
-</div>
+
+  <section id="tabela" class="section-block">
+    <h1 class="section-title">Classificação, programação e resultados</h1>
+
+    <p class="section-description">
+      Acompanhe os resultados das partidas e consulte a programação e a classificação do torneio.
+    </p>
+
+    <!-- PLACAR AO VIVO -->
+    <section class="panel section-block" id="placar">
+      <div class="panel-heading">
+        <div>
+          <h2>🎾 Placar ao Vivo</h2>
+          <p>Acompanhe as partidas e os resultados registrados.</p>
+        </div>
+
+        <span class="live-indicator">
+          <span class="live-dot"></span>
+          ATUALIZAÇÃO AUTOMÁTICA
+        </span>
+      </div>
+
+      <iframe
+        class="live-frame"
+        title="Placar ao vivo do Torneio Vog Ville"
+        src="https://script.google.com/macros/s/AKfycbyz44hN3qnkrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec?page=public"
+        loading="eager"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+    <!-- CLASSIFICAÇÃO E PROGRAMAÇÃO -->
+    <section class="panel" id="planilha">
+      <div class="panel-heading">
+        <div>
+          <h2>📊 Classificação e programação</h2>
+          <p>Utilize as abas da planilha para consultar as informações do torneio.</p>
+        </div>
+      </div>
+
+      <iframe
+        class="sheet-frame"
+        title="Planilha de classificação, programação e resultados do Torneio Vog Ville"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin">
+      </iframe>
+    </section>
+  </section>
+
+  <div class="info-grid">
+
+    <section id="fotos" class="info-card">
+      <h3>📸 Fotos do torneio</h3>
+      <p class="placeholder">
+        O espaço para as fotos está pronto. Quando houver um álbum compartilhado,
+        o botão poderá direcionar diretamente para ele.
+      </p>
+    </section>
+
+    <section id="avisos" class="info-card">
+      <h3>📢 Avisos</h3>
+      <p class="placeholder">
+        Os comunicados do torneio serão publicados aqui.
+        Consulte esta seção para acompanhar as atualizações.
+      </p>
+    </section>
+
+  </div>
 </main>
-<footer>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</footer>
+
+<footer>
+  2º Open de Tênis · Condomínio Vog Ville ·
+  24 de outubro a 1º de novembro de 2026
+</footer>
+
 <script>
-document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>{document.querySelectorAll('nav a').forEach(x=>x.classList.remove('active'));a.classList.add('active')}));
+document.querySelectorAll('nav a').forEach(function (link) {
+  link.addEventListener('click', function () {
+    document.querySelectorAll('nav a').forEach(function (item) {
+      item.classList.remove('active');
+    });
+
+    link.classList.add('active');
+  });
+});
 </script>
-</body></html>
+
+</body>
+</html>
+```
