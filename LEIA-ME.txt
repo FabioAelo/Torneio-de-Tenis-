@@ -1,38 +1,11 @@
-PLACAR AO VIVO — 2º OPEN DE TÊNIS VOG VILLE
+ATUALIZAÇÃO DO SITE — TORNEIO VOG VILLE
 
-Conteúdo:
-- Code.gs: código do servidor Google Apps Script.
-- Index.html: interface do placar para celular/computador.
+Alterações: botão “Abrir planilha completa” removido; cabeçalho com logo e menu fixado no topo durante a rolagem; botões do menu em verde.
 
-CONFIGURAÇÃO (uma vez):
-1. Abra a planilha original do torneio.
-2. Extensões > Apps Script.
-3. Substitua o conteúdo de Code.gs pelo arquivo Code.gs deste pacote.
-4. Clique no + ao lado de Arquivos > HTML e crie Index (o nome deve ser Index). Cole o conteúdo de Index.html.
-5. Em Configurações do projeto > Propriedades do script, adicione:
-   Nome: PLACAR_PIN
-   Valor: escolha um PIN que será usado somente pelos operadores do placar.
-6. No editor, selecione a função setupPlacar e clique em Executar. Autorize o acesso à planilha.
-7. Implantar > Nova implantação > Aplicativo da Web.
-   Executar como: você.
-   Quem tem acesso: qualquer pessoa (necessário para acesso pelo site público). Proteja os lançamentos usando o PIN; não publique o PIN no site.
-8. Clique em Implantar e copie a URL do aplicativo da Web. Essa URL é a tela do placar.
+COMO PUBLICAR NO GITHUB
+1. Abra o repositório https://github.com/FabioAelo/Torneio-de-Tenis-
+2. Abra o arquivo index.html e clique no lápis (Edit).
+3. Substitua todo o conteúdo pelo arquivo index.html desta pasta e confirme em Commit changes.
+4. Para atualizar a imagem/logo, mantenha também o arquivo logo-torneio.png no repositório.
 
-USO:
-- Abra a URL do aplicativo web, digite o PIN e carregue as partidas.
-- Selecione a partida e configure sets, games, tie-break e regra de 40–40.
-- Inicie o placar e registre cada ponto.
-- Ao terminar, clique em “Finalizar e gravar resultado”.
-- O sistema grava os games totais nas colunas J e K da aba “Lançamento Único”, usadas pelas fórmulas atuais da classificação, e guarda o detalhe dos sets na aba “Placar Ao Vivo”.
-
-IMPORTANTE:
-- Esta é uma integração inicial que precisa ser implantada/autoriza pela proprietária da planilha; o assistente não tem acesso para publicar no seu Google Apps Script.
-- A tela de placar é para o operador com PIN. Uma tela pública separada de leitura/placar ao vivo ainda precisa ser ligada ao site GitHub Pages para espectadores.
-- Se a partida já tiver resultado nas colunas J/K, o sistema bloqueia a gravação para não sobrescrever dados existentes.
-- Teste primeiro com uma partida de teste antes de usar em jogo oficial.
-
-
-CORREÇÕES DESTA VERSÃO:
-- O arquivo Index.html contém somente a interface HTML; não cole o conteúdo de Code.gs dentro dele.
-- Corrigida a validação do vencedor quando o jogador A vence (índice 0).
-- Corrigido o acionamento do tie-break decisivo quando os sets ficam empatados em melhor de 3 (1–1) ou melhor de 5 (2–2).
+IMPORTANTE: as abas internas da planilha incorporada são desenhadas pelo próprio Google Sheets e não podem ser recoloridas pelo CSS do site. O menu verde fixo é o controle visual do site; as abas originais da planilha continuam funcionando normalmente.

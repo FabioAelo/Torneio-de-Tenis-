@@ -6,27 +6,28 @@
 <title>2º Open de Tênis — Vog Ville</title>
 <style>
 :root{--navy:#102d49;--green:#138b75;--gold:#d5a94c;--bg:#eef2f6;--ink:#17324d;--white:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:12px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
-.top{background:var(--navy);color:white;border-bottom:4px solid var(--gold)}.wrap{width:min(1500px,100%);margin:auto}.brand{display:block;width:100%;height:auto;max-height:190px;object-fit:cover;object-position:center}
-nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:#fff;border-bottom:1px solid #d2dce5;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #102d4910}
-nav a,.action{display:inline-block;text-decoration:none;font-size:14px;font-weight:700;padding:10px 15px;border-radius:5px;border:1px solid var(--navy);color:var(--navy);background:white}nav a.active,.action.primary{background:var(--green);border-color:var(--green);color:white}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:240px}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+.site-header{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 3px 12px #102d4920}.top{background:var(--navy);color:white;border-bottom:4px solid var(--gold)}.wrap{width:min(1500px,100%);margin:auto}.brand{display:block;width:100%;height:auto;max-height:190px;object-fit:cover;object-position:center}
+nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;padding:10px;background:#fff;border-bottom:1px solid #d2dce5}
+nav a,.action{display:inline-block;text-decoration:none;font-size:14px;font-weight:700;padding:10px 15px;border-radius:5px;border:1px solid var(--green);color:white;background:var(--green);transition:filter .15s,transform .15s}nav a:hover,.action:hover{filter:brightness(.92);transform:translateY(-1px)}nav a.active,.action.primary{background:#0e765f;border-color:#0e765f;color:white}
 main{width:min(1500px,100%);margin:0 auto;padding:12px}.section-title{margin:4px 0 10px;font-size:22px;color:var(--navy)}.table-actions{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}.panel{border:1px solid #cbd7e2;background:white;border-radius:5px;overflow:hidden;box-shadow:0 1px 3px #102d4910}iframe{display:block;width:100%;height:calc(100vh - 250px);min-height:620px;border:0;background:white}
 .info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}.info-card{background:white;border:1px solid #d0dbe5;border-top:4px solid var(--green);border-radius:7px;padding:16px}.info-card h3{margin:0 0 8px;color:var(--navy)}.info-card p{margin:0;line-height:1.5}.placeholder{color:#5b6e80}.hidden{display:none}footer{text-align:center;padding:18px 10px;color:#65778a;font-size:12px}
-@media(max-width:700px){.brand{max-height:130px;object-fit:cover}nav{gap:6px;padding:8px 5px}nav a,.action{font-size:12px;padding:9px 10px}main{padding:8px 5px}.section-title{font-size:19px}iframe{height:78vh;min-height:520px}.info-grid{grid-template-columns:1fr}}
+@media(max-width:700px){html{scroll-padding-top:170px}.brand{max-height:130px;object-fit:cover}nav{gap:6px;padding:8px 5px}nav a,.action{font-size:12px;padding:9px 10px}main{padding:8px 5px}.section-title{font-size:19px}iframe{height:78vh;min-height:520px}.info-grid{grid-template-columns:1fr}}
 </style></head>
 <body>
+<div class="site-header">
 <div class="top"><div class="wrap"><img class="brand" src="logo-torneio.png" alt="Logo do 2º Open de Tênis do Condomínio Vog Ville"></div></div>
 <nav aria-label="Menu principal">
 <a href="#tabela" class="active" data-section="tabela">Classificação e jogos</a>
 <a href="#fotos" data-section="fotos">Fotos do torneio</a>
 <a href="#avisos" data-section="avisos">Avisos</a>
 </nav>
+</div>
 <main>
 <section id="tabela">
 <h1 class="section-title">Classificação, programação e resultados</h1>
-<div class="table-actions"><a class="action primary" href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml" target="_blank" rel="noopener">Abrir planilha completa</a></div>
 <div class="panel"><iframe title="Planilha publicada do Torneio Vog Ville" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-<p class="placeholder">Se a tabela não carregar neste quadro, use “Abrir planilha completa”.</p>
+<p class="placeholder">Use as abas na parte inferior da planilha para alternar entre o painel, a programação, a classificação, os lançamentos e os participantes.</p>
 </section>
 <div class="info-grid">
 <section id="fotos" class="info-card"><h3>📸 Fotos do torneio</h3><p class="placeholder">O espaço para as fotos está pronto. Quando houver um álbum compartilhado, o botão poderá direcionar diretamente para ele.</p></section>
