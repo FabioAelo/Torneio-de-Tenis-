@@ -30,3 +30,9 @@ IMPORTANTE:
 - A tela de placar é para o operador com PIN. Uma tela pública separada de leitura/placar ao vivo ainda precisa ser ligada ao site GitHub Pages para espectadores.
 - Se a partida já tiver resultado nas colunas J/K, o sistema bloqueia a gravação para não sobrescrever dados existentes.
 - Teste primeiro com uma partida de teste antes de usar em jogo oficial.
+
+
+CORREÇÕES DESTA VERSÃO:
+- O arquivo Index.html contém somente a interface HTML; não cole o conteúdo de Code.gs dentro dele.
+- Corrigida a validação do vencedor quando o jogador A vence (índice 0).
+- Corrigido o acionamento do tie-break decisivo quando os sets ficam empatados em melhor de 3 (1–1) ou melhor de 5 (2–2).

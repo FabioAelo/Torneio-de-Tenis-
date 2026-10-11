@@ -73,7 +73,7 @@ function saveLiveState(pin, row, state) {
 
 function finishMatch(pin, row, state) {
   requirePin_(pin);
-  if (!state || state.status !== 'Finalizado' || !state.winner) throw new Error('A partida ainda não está finalizada.');
+  if (!state || state.status !== 'Finalizado' || (state.winner !== 0 && state.winner !== 1)) throw new Error('A partida ainda não está finalizada.');
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
   try {
