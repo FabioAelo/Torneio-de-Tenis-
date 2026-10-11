@@ -69,8 +69,7 @@ nav {
   border-bottom: 1px solid #d2dce5;
 }
 
-nav a,
-.action {
+nav a {
   display: inline-block;
   text-decoration: none;
   font-size: 14px;
@@ -83,14 +82,12 @@ nav a,
   transition: filter .15s, transform .15s;
 }
 
-nav a:hover,
-.action:hover {
+nav a:hover {
   filter: brightness(.92);
   transform: translateY(-1px);
 }
 
-nav a.active,
-.action.primary {
+nav a.active {
   background: #0e765f;
   border-color: #0e765f;
   color: white;
@@ -105,12 +102,6 @@ main {
 .section-title {
   margin: 4px 0 10px;
   font-size: 22px;
-  color: var(--navy);
-}
-
-.subsection-title {
-  margin: 0;
-  font-size: 19px;
   color: var(--navy);
 }
 
@@ -243,8 +234,7 @@ footer {
     padding: 8px 5px;
   }
 
-  nav a,
-  .action {
+  nav a {
     font-size: 12px;
     padding: 9px 10px;
   }
@@ -255,10 +245,6 @@ footer {
 
   .section-title {
     font-size: 19px;
-  }
-
-  .subsection-title {
-    font-size: 17px;
   }
 
   .panel-heading {
@@ -298,15 +284,9 @@ footer {
   </div>
 
   <nav aria-label="Menu principal">
-    <a href="#tabela" class="active" data-section="tabela">
-      Classificação e jogos
-    </a>
-    <a href="#fotos" data-section="fotos">
-      Fotos do torneio
-    </a>
-    <a href="#avisos" data-section="avisos">
-      Avisos
-    </a>
+    <a href="#tabela" class="active">Classificação e jogos</a>
+    <a href="#fotos">Fotos do torneio</a>
+    <a href="#avisos">Avisos</a>
   </nav>
 </div>
 
@@ -319,7 +299,6 @@ footer {
       Acompanhe os resultados das partidas e consulte a programação e a classificação do torneio.
     </p>
 
-    <!-- PLACAR AO VIVO -->
     <section class="panel section-block" id="placar">
       <div class="panel-heading">
         <div>
@@ -336,19 +315,18 @@ footer {
       <iframe
         class="live-frame"
         title="Placar ao vivo do Torneio Vog Ville"
-        src="https://script.google.com/macros/s/AKfycbyz44hN3qnkrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec?page=public"
+        src="https://script.google.com/macros/s/AKfycbyz44hN3qnkrrmlsJdC_f77wYWdVMXGNQ5UwOAv27iXGJwXYPp0N9EYzHRKt9Ms2pA/exec?page=public"
         loading="eager"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen>
       </iframe>
     </section>
 
-    <!-- CLASSIFICAÇÃO E PROGRAMAÇÃO -->
     <section class="panel" id="planilha">
       <div class="panel-heading">
         <div>
           <h2>📊 Classificação e programação</h2>
-          <p>Utilize as abas da planilha para consultar as informações do torneio.</p>
+          <p>Consulte as abas da planilha para ver os dados do torneio.</p>
         </div>
       </div>
 
