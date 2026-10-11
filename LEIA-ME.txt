@@ -1,0 +1,11 @@
+PUBLICAÇÃO DO SITE — 2º OPEN DE TÊNIS VOG VILLE
+
+1. Extraia este ZIP no computador.
+2. O arquivo que será enviado ao GitHub é index.html.
+3. A imagem enviada mostra o repositório github.com/FabioAelo/aeloimoveis, que é descrito como “Corretor de Imoveis”. Para não misturar o site do torneio com o site imobiliário, recomendamos criar um repositório novo, por exemplo: vog-ville-tenis.
+4. No GitHub, clique em New repository, dê o nome vog-ville-tenis, escolha Public e crie o repositório.
+5. No repositório novo, clique Add file > Upload files e envie index.html. Depois clique Commit changes.
+6. Vá a Settings > Pages. Em Build and deployment, selecione Deploy from a branch, branch main, pasta /(root), e clique Save.
+7. Aguarde o endereço aparecer na página Pages. O endereço normalmente será https://fabioaelo.github.io/vog-ville-tenis/ (confirme o URL mostrado pelo GitHub).
+
+A página usa a planilha publicada cujo link foi enviado na conversa. Confirme em janela anônima que o link publicado abre sem login antes de divulgar o site.
