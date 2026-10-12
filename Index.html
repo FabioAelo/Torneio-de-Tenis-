@@ -6,40 +6,38 @@
 :root{--navy:#102d49;--green:#138b75;--lime:#d5f33c;--gold:#d5a94c;--bg:#eef2f6}*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Arial,sans-serif;color:var(--navy)}header{background:var(--navy);color:white;padding:18px 16px;border-bottom:5px solid var(--gold)}header small{letter-spacing:2px;color:var(--lime);font-weight:bold}h1{margin:6px 0;font-size:clamp(22px,4vw,32px)}main{max-width:1000px;margin:auto;padding:16px}.card{background:#fff;border-radius:14px;padding:16px;margin:0 0 14px;box-shadow:0 3px 14px #102d4915}.row{display:flex;gap:12px;flex-wrap:wrap}.field{flex:1;min-width:180px}label{display:block;font-size:13px;font-weight:bold;margin:0 0 6px}select,input{width:100%;padding:12px;border:1px solid #c7d2df;border-radius:8px;font-size:16px;background:white;color:var(--navy)}button{border:0;border-radius:9px;padding:13px 16px;font-weight:bold;font-size:15px;cursor:pointer;background:var(--green);color:white}button.secondary{background:#e8eef5;color:var(--navy)}button.warn{background:#a13b32}button:disabled{opacity:.4;cursor:not-allowed}.hidden{display:none}.players{display:grid;grid-template-columns:1fr 1fr;gap:12px}.player{border:2px solid #dce4ec;border-radius:12px;padding:14px;text-align:center}.player h2{font-size:clamp(18px,3vw,25px);margin:0 0 10px;overflow-wrap:anywhere}.point{font-size:clamp(38px,8vw,60px);font-weight:900;margin:4px 0}.games{font-size:clamp(25px,5vw,38px);font-weight:bold}.setline{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px 0}.pill{background:#edf5c9;border-radius:999px;padding:8px 12px;font-weight:bold}.status{padding:10px;background:#f6f8fa;border-radius:8px;margin:10px 0}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{flex:1;min-width:130px}.hint{font-size:13px;color:#5e7184;line-height:1.5}.err{color:#a13b32;font-weight:bold}.good{color:#13704f;font-weight:bold}@media(max-width:560px){main{padding:10px}.card{padding:12px}.players{gap:7px}.player{padding:8px}.actions button{min-width:100%}}
 
 /* Modo placar em tela cheia inspirado no placar físico do torneio */
-.scoreboard-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:nowrap;padding:0 0 8px;border-bottom:2px solid var(--lime);margin-bottom:8px}
-.scoreboard-brand{display:flex;align-items:center;gap:12px;min-width:0;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:var(--lime);font-size:clamp(11px,1.3vw,15px)}
-.scoreboard-brand img{display:block;width:clamp(150px,28vw,330px);height:auto;max-height:66px;object-fit:contain;object-position:left center}
-.scoreboard-brand .brand-text{display:none}
-.scoreboard-brand strong{display:none}
+.scoreboard-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:8px 4px 16px;border-bottom:3px solid var(--lime);margin-bottom:16px}
+.scoreboard-brand{font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--lime);font-size:clamp(13px,2vw,20px)}
+.scoreboard-brand strong{display:block;color:#fff;font-size:clamp(24px,4vw,46px);letter-spacing:.5px}
 .scoreboard-top button{background:#d5f33c;color:#102d49;padding:10px 14px}
-#scoreboard .match-banner{font-size:clamp(13px,1.6vw,20px);font-weight:800;text-align:center;color:#fff;margin:0 0 8px}
-#scoreboard .score-court{position:relative;padding:clamp(8px,1vw,14px);border:2px solid #d5f33c;border-radius:20px;background:linear-gradient(180deg,#102d49 0%,#09203b 60%,#0c654e 60%,#0c654e 100%);overflow:hidden;box-shadow:inset 0 0 0 4px #ffffff0b}
+#scoreboard .match-banner{font-size:clamp(16px,2.4vw,27px);font-weight:800;text-align:center;color:#fff;margin:0 0 14px}
+#scoreboard .score-court{position:relative;padding:clamp(12px,2vw,26px);border:2px solid #d5f33c;border-radius:20px;background:linear-gradient(180deg,#102d49 0%,#09203b 60%,#0c654e 60%,#0c654e 100%);overflow:hidden;box-shadow:inset 0 0 0 4px #ffffff0b}
 #scoreboard .score-court:before{content:"";position:absolute;left:50%;top:48%;bottom:0;border-left:4px solid #d5f33c;opacity:.9;transform:translateX(-50%);pointer-events:none}
 #scoreboard .score-court:after{content:"";position:absolute;left:0;right:0;top:72%;border-top:3px solid #fff;opacity:.85;pointer-events:none}
 #scoreboard .score-court>*{position:relative;z-index:1}
-#scoreboard .players{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,1vw,14px)}
-#scoreboard .player{border:2px solid #d5f33c;border-radius:12px;background:linear-gradient(180deg,#f9fbff,#e8edf5);padding:clamp(7px,1vw,12px);box-shadow:0 8px 22px #00142c55}
-#scoreboard .player h2{background:#102d49;color:white;border:2px solid #d5f33c;border-radius:8px;padding:7px;margin:0 0 6px;min-height:38px;display:flex;align-items:center;justify-content:center}
+#scoreboard .players{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(8px,2vw,24px)}
+#scoreboard .player{border:2px solid #d5f33c;border-radius:16px;background:linear-gradient(180deg,#f9fbff,#e8edf5);padding:clamp(10px,2vw,24px);box-shadow:0 8px 22px #00142c55}
+#scoreboard .player h2{background:#102d49;color:white;border:2px solid #d5f33c;border-radius:10px;padding:10px;margin:-2px -2px 12px;min-height:52px;display:flex;align-items:center;justify-content:center}
 #scoreboard .player .hint{color:#102d49;font-weight:900;letter-spacing:2px}
-#scoreboard .player .games{color:#102d49;font-size:clamp(25px,3.8vw,48px);line-height:1}
-#scoreboard .player .point{background:#fff;border:2px solid #102d49;border-radius:9px;color:#102d49;font-size:clamp(38px,6vw,76px);line-height:1;margin:5px 0;padding:2px;box-shadow:inset 0 0 0 3px #dce4ec}
-#scoreboard .player button{background:#d5f33c;color:#102d49;border:2px solid #102d49;font-size:clamp(13px,1.5vw,17px);padding:8px}
-#scoreboard .score-meta{display:grid;grid-template-columns:1fr minmax(90px,.45fr) 1fr;gap:7px;align-items:stretch;margin:0 0 8px}
-#scoreboard .score-meta .meta-box{background:#fff;color:#102d49;border:2px solid #d5f33c;border-radius:9px;text-align:center;padding:4px 8px;font-size:12px}
-#scoreboard .score-meta .meta-box strong{display:block;font-size:clamp(21px,3vw,36px);line-height:1.05}
-#scoreboard .setline{margin:6px 0}
+#scoreboard .player .games{color:#102d49;font-size:clamp(32px,6vw,70px);line-height:1.05}
+#scoreboard .player .point{background:#fff;border:3px solid #102d49;border-radius:12px;color:#102d49;font-size:clamp(52px,11vw,130px);line-height:1.05;margin:10px 0;padding:5px;box-shadow:inset 0 0 0 3px #dce4ec}
+#scoreboard .player button{background:#d5f33c;color:#102d49;border:2px solid #102d49;font-size:clamp(16px,2.4vw,24px);padding:16px}
+#scoreboard .score-meta{display:grid;grid-template-columns:1fr minmax(110px,.55fr) 1fr;gap:10px;align-items:stretch;margin:0 0 14px}
+#scoreboard .score-meta .meta-box{background:#fff;color:#102d49;border:2px solid #d5f33c;border-radius:12px;text-align:center;padding:8px 12px}
+#scoreboard .score-meta .meta-box strong{display:block;font-size:clamp(26px,4vw,50px)}
+#scoreboard .setline{margin:14px 0}
 #scoreboard .pill{background:#d5f33c;color:#102d49;border:1px solid #fff}
 #scoreboard .status{background:#fff;color:#102d49;font-weight:bold}
-#scoreboard .score-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
-#scoreboard .score-actions button{flex:1;min-width:150px;padding:9px;font-size:13px}
+#scoreboard .score-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+#scoreboard .score-actions button{flex:1;min-width:180px}
 body.score-mode{background:#07182c;overflow:auto}
 body.score-mode header{display:none}
 body.score-mode main{max-width:none;margin:0;padding:0}
 body.score-mode main>section:not(#scoreboard){display:none!important}
-body.score-mode #scoreboard{display:block!important;position:fixed;inset:0;z-index:9999;width:100vw;height:100vh;height:100dvh;overflow:auto;margin:0;padding:clamp(8px,1.2vw,16px);border-radius:0;background:radial-gradient(ellipse at top,#173d63 0%,#07182c 70%);color:#fff;box-shadow:none}
+body.score-mode #scoreboard{display:block!important;position:fixed;inset:0;z-index:9999;width:100vw;height:100vh;height:100dvh;overflow:auto;margin:0;padding:clamp(12px,2.4vw,30px);border-radius:0;background:radial-gradient(ellipse at top,#173d63 0%,#07182c 70%);color:#fff;box-shadow:none}
 body.score-mode #scoreboard #matchTitle{color:#fff}
 body.score-mode #scoreboard #matchTitle .hint{color:#dce9f5}
-@media(max-width:600px){.scoreboard-brand img{width:clamp(115px,36vw,210px);max-height:48px}.scoreboard-top button{font-size:11px;padding:8px}.scoreboard-brand{gap:4px}#scoreboard .score-meta{grid-template-columns:1fr minmax(70px,.7fr) 1fr}#scoreboard .score-meta .meta-box:last-child{grid-column:auto}#scoreboard .players{gap:6px}#scoreboard .player{padding:6px}#scoreboard .player h2{font-size:clamp(13px,3.5vw,18px);padding:6px;min-height:34px;margin-bottom:5px}#scoreboard .player .point{font-size:clamp(34px,9vw,56px)}#scoreboard .player button{padding:8px 4px}#scoreboard .player .hint{font-size:10px;letter-spacing:1px}body.score-mode #scoreboard{padding:8px}}
+@media(max-width:600px){#scoreboard .score-meta{grid-template-columns:1fr 1fr}#scoreboard .score-meta .meta-box:last-child{grid-column:1/-1}#scoreboard .players{gap:7px}#scoreboard .player{padding:8px}#scoreboard .player h2{font-size:clamp(15px,4vw,20px);padding:8px;min-height:48px}#scoreboard .player .point{font-size:clamp(42px,12vw,76px)}#scoreboard .player button{padding:12px 6px}body.score-mode #scoreboard{padding:10px}}
 @media(min-width:1000px){body.score-mode #scoreboard .score-court{max-width:1500px;margin:0 auto}}
 
 </style></head>
@@ -48,7 +46,7 @@ body.score-mode #scoreboard #matchTitle .hint{color:#dce9f5}
 <section class="card"><div class="row"><div class="field"><label>PIN do operador</label><input id="pin" type="password" placeholder="Digite o PIN do placar"></div><div class="field" style="align-self:end"><button onclick="loadMatches()">Entrar e carregar jogos</button></div></div><p id="message" class="hint">Apenas o operador autorizado deve lançar pontos. O público poderá acompanhar pelo link de visualização.</p></section>
 <section id="matchPicker" class="card hidden"><div class="row"><div class="field"><label>Partida programada</label><select id="match" onchange="selectMatch()"></select></div><div class="field"><label>Quantidade de sets</label><select id="bestOf"><option value="1">Set único</option><option value="3" selected>Melhor de 3 sets</option><option value="5">Melhor de 5 sets</option></select></div><div class="field"><label>Games por set</label><select id="gamesTarget"><option value="4" selected>4 games</option><option value="6">6 games</option></select></div></div><div class="row" style="margin-top:12px"><div class="field"><label>Decisão do último set</label><select id="lastSet"><option value="tie7" selected>Tie-break até 7 (diferença de 2)</option><option value="super10">Super tie-break até 10 (diferença de 2)</option><option value="full">Set completo</option></select></div><div class="field"><label>Regra no 40–40</label><select id="noAd"><option value="yes" selected>Ponto decisivo — sem vantagem</option><option value="no">Com vantagem (AD)</option></select></div></div><div class="actions" style="margin-top:12px"><button onclick="startMatch()">Iniciar / carregar placar</button><button class="secondary" onclick="resetCurrent()">Zerar placar desta partida</button></div><p class="hint">As regras podem ser alteradas de uma partida para outra. “Set único”, “melhor de 3” e “melhor de 5” controlam quando a partida termina.</p></section>
 <section id="scoreboard" class="card hidden">
-<div class="scoreboard-top"><div class="scoreboard-brand"><img src="https://fabioaelo.github.io/Torneio-de-Tenis-/logo-torneio.png" alt="Logo do 2º Open de Tênis do Condomínio Vog Ville"><span class="brand-text">Condomínio Vog Ville</span></div><button type="button" onclick="exitScoreMode()">↩ Voltar à configuração</button></div>
+<div class="scoreboard-top"><div class="scoreboard-brand">Condomínio Vog Ville<strong>2º Open de Tênis</strong></div><button type="button" onclick="exitScoreMode()">↩ Voltar à configuração</button></div>
 <div id="matchTitle"></div>
 <div class="score-meta"><div class="meta-box"><span>SETS A</span><strong id="setsA">0</strong></div><div class="meta-box"><span>SETS</span><strong id="setsCenter">0 × 0</strong></div><div class="meta-box"><span>SETS B</span><strong id="setsB">0</strong></div></div>
 <div class="score-court"><div class="match-banner">PLACAR OFICIAL · 2º OPEN DE TÊNIS</div><div class="setline" id="setsSummary"></div><div id="tieArea" class="status hidden"></div>
@@ -64,7 +62,7 @@ async function loadMatches(){pin=$('pin').value.trim();if(!pin){say('Digite o PI
 function selectMatch(){current=matches.find(m=>m.row===Number($('match').value));if(!current)return;$('matchTitle').innerHTML=`<h2>Jogo ${esc(current.id)} · ${esc(current.category)} · ${esc(current.modality)}</h2><p class="hint">${esc(current.date)} ${esc(current.time)} · Linha ${current.row} da aba Lançamento Único</p>`;$('nameA').textContent=current.playerA;$('nameB').textContent=current.playerB;$('scoreboard').classList.add('hidden');$('finishBtn').disabled=true;}
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function freshState(){return {row:current.row,playerA:current.playerA,playerB:current.playerB,bestOf:Number($('bestOf').value),gamesTarget:Number($('gamesTarget').value),lastSet:$('lastSet').value,noAd:$('noAd').value==='yes',setsA:0,setsB:0,gamesA:0,gamesB:0,pointsA:0,pointsB:0,advantage:null,tie:false,tieA:0,tieB:0,setScores:[],totalGamesA:0,totalGamesB:0,status:'Em andamento',winner:null};}
-async function startMatch(){if(!current)return; if(current.finished){say('Esta partida já tem placar na planilha. Escolha outra partida ou confira o resultado antes de tentar novamente.','err');return}enterScoreMode();try{let saved=await callServer('getLiveState',[pin,current.row]);state=saved&&saved.status==='Em andamento'?saved:freshState();if(!saved){await persist()}$('nameA').textContent=state.playerA||current.playerA;$('nameB').textContent=state.playerB||current.playerB;$('scoreboard').classList.remove('hidden');history=[];render();say('Placar carregado. Toque em PONTO A ou PONTO B a cada ponto.','good')}catch(e){exitScoreMode();say(e.message,'err')}}
+async function startMatch(){if(!current)return; if(current.finished){say('Esta partida já tem placar na planilha. Escolha outra partida ou confira o resultado antes de tentar novamente.','err');return}enterScoreMode();try{let saved=await callServer('getLiveState',[pin,current.row]);state=saved&&saved.status==='Em andamento'?saved:freshState();if(!saved){await persist()}$('scoreboard').classList.remove('hidden');history=[];render();say('Placar carregado. Toque em PONTO A ou PONTO B a cada ponto.','good')}catch(e){exitScoreMode();say(e.message,'err')}}
 function enterScoreMode(){document.body.classList.add('score-mode');const root=document.documentElement;if(root.requestFullscreen){const p=root.requestFullscreen();if(p&&p.catch)p.catch(()=>{});}}
 function exitScoreMode(){document.body.classList.remove('score-mode');if(document.fullscreenElement&&document.exitFullscreen){const p=document.exitFullscreen();if(p&&p.catch)p.catch(()=>{});}}
 document.addEventListener('fullscreenchange',function(){if(!document.fullscreenElement){document.body.classList.remove('score-mode');}});
