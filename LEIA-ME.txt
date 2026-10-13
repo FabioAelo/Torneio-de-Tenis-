@@ -1,11 +1,21 @@
-ATUALIZAÇÃO DO SITE — TORNEIO VOG VILLE
+PACOTE DE ÍCONE INSTALÁVEL — TORNEIO VOG VILLE 2026
 
-Alterações: botão “Abrir planilha completa” removido; cabeçalho com logo e menu fixado no topo durante a rolagem; botões do menu em verde.
+O que contém:
+- index.html: a página principal recebida, com apenas as referências PWA adicionadas.
+- manifest.webmanifest: nome, cores e ícones do atalho instalável.
+- service-worker.js: suporte básico para instalação e abertura da página.
+- ícones PNG em tamanhos compatíveis com celulares.
 
-COMO PUBLICAR NO GITHUB
-1. Abra o repositório https://github.com/FabioAelo/Torneio-de-Tenis-
-2. Abra o arquivo index.html e clique no lápis (Edit).
-3. Substitua todo o conteúdo pelo arquivo index.html desta pasta e confirme em Commit changes.
-4. Para atualizar a imagem/logo, mantenha também o arquivo logo-torneio.png no repositório.
+COMO PUBLICAR COM SEGURANÇA
+1. Não apague nem altere os outros arquivos do repositório.
+2. Faça primeiro uma cópia de segurança do index.html atual.
+3. No repositório GitHub FabioAelo/Torneio-de-Tenis-, carregue os arquivos deste pacote na pasta raiz.
+4. Substitua o index.html atual pelo index.html deste pacote e adicione os outros arquivos mantendo exatamente os nomes.
+5. Aguarde o GitHub Pages atualizar e teste o site normal antes de instalar no celular.
+6. Android: abra o site no Chrome > menu ⋮ > Instalar app ou Adicionar à tela inicial.
+7. iPhone: abra no Safari > Compartilhar > Adicionar à Tela de Início.
 
-IMPORTANTE: as abas internas da planilha incorporada são desenhadas pelo próprio Google Sheets e não podem ser recoloridas pelo CSS do site. O menu verde fixo é o controle visual do site; as abas originais da planilha continuam funcionando normalmente.
+IMPORTANTE
+- Este pacote não foi publicado no GitHub; ele apenas prepara os arquivos.
+- A página usa recursos externos (planilha e Apps Script), por isso placar, fotos e dados ao vivo continuam dependendo de internet.
+- Se o GitHub Pages apresentar erro após a atualização, restaure a cópia anterior de index.html e remova os novos arquivos.

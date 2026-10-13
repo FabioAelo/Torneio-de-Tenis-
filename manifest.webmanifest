@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "2º Open de Tênis — Vog Ville 2026",
+  "short_name": "Vog Ville 2026",
+  "description": "Acompanhe o 2º Open de Tênis do Condomínio Vog Ville.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#102d49",
+  "theme_color": "#102d49",
+  "icons": [
+    {
+      "src": "icone-vog-ville-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icone-vog-ville-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
