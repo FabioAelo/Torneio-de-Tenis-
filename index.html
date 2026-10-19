@@ -98,21 +98,37 @@ html{scroll-padding-top:150px}body{background:#f3f6f8;padding-bottom:86px}.site-
 
 
 .main-nav{gap:8px;padding:9px;background:#f3f6f8}.main-nav .menu-group{display:block;border:1px solid #e1e7ed;border-radius:11px;overflow:hidden;background:#fff}.main-nav .menu-group-toggle{width:100%;display:flex;align-items:center;gap:9px;padding:11px 12px;border:0;background:#fff;color:#17324d;text-align:left;font-size:12px;font-weight:900;cursor:pointer}.main-nav .menu-group-toggle span:nth-child(2){flex:1}.main-nav .menu-chevron{color:#597187}.main-nav .menu-group-items{display:grid;padding:0 8px 7px;gap:2px}.main-nav .menu-group-items a{display:flex;align-items:center;gap:8px;padding:9px 10px;background:#fff;font-size:11px;font-weight:500;border-radius:7px}.main-nav .menu-group-items a span{margin-left:auto;color:#91a0ae;font-size:16px}.main-nav .menu-group.collapsed .menu-group-items{display:none}.main-nav .menu-group-toggle:hover,.main-nav .menu-group-toggle:focus-visible{background:#f7fafc;color:#0e765f}.main-nav .menu-group-items a:hover{background:#edf6f1}
+
+/* Navegação principal no fluxo da página, imediatamente abaixo do banner. */
+.site-header{position:relative;display:flex;flex-direction:column;overflow:visible}
+.site-header .top{display:contents}
+.site-header .wrap{width:100%;max-width:none;margin:0;padding:0}
+.site-header .brand{display:block;width:100%;height:auto;max-height:190px;object-fit:cover}
+.bottom-tabs{position:relative!important;inset:auto!important;left:auto!important;right:auto!important;bottom:auto!important;top:auto!important;transform:none!important;display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;width:100%!important;max-width:none!important;margin:0!important;padding:8px max(8px,env(safe-area-inset-left))!important;border-radius:0!important;border-top:2px solid #d5a94c;background:#071f36;box-shadow:0 3px 10px rgba(0,0,0,.16);z-index:30}
+.bottom-tabs .tab-link{min-width:0;min-height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:4px 2px;color:#dce6ef;text-decoration:none;border:1px solid transparent;border-radius:9px;background:transparent;font:inherit;cursor:pointer}
+.bottom-tabs .tab-link span{font-size:18px;line-height:1.1}.bottom-tabs .tab-link small{font-size:11px;line-height:1.1;white-space:nowrap}
+.bottom-tabs .tab-link:hover,.bottom-tabs .tab-link:focus-visible{color:#f5c84d;border-color:#d5a94c;outline:2px solid transparent}.bottom-tabs .tab-link:active{background:#138b75;color:#fff}.bottom-tabs .tab-link.active{color:#f5c84d;box-shadow:inset 0 -3px #d5a94c}
+.site-header .top-menu-bar{display:none!important}
+.main-nav{position:absolute!important;top:auto!important;right:8px;left:auto;width:min(340px,calc(100vw - 16px));z-index:90;display:none;max-height:70vh;overflow:auto}
+.main-nav.menu-open{display:flex!important}
+body{padding-bottom:0!important}#appMain{padding-bottom:24px!important}
+@media(min-width:701px){.site-header .brand{max-height:190px}.bottom-tabs{padding:10px 18px!important}.bottom-tabs .tab-link small{font-size:12px}}
+@media(max-width:700px){.site-header .brand{height:auto;max-height:100px;object-fit:cover}.bottom-tabs{padding:7px 4px!important}.bottom-tabs .tab-link small{font-size:10px}.bottom-tabs .tab-link span{font-size:18px}#appMain{padding:10px 14px 20px!important}}
 </style>
 
-</head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Logo do 2º Open de Tênis do Condomínio Vog Ville">     </div>   <div class="top-menu-bar"><button type="button" class="top-menu-toggle" id="topMenuToggle" aria-expanded="false" aria-controls="mainNav">☰ <span>Menu do torneio</span> <span aria-hidden="true">⌄</span></button></div>   <nav aria-label="Menu principal" class="main-nav" id="mainNav">
+</head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Logo do 2º Open de Tênis do Condomínio Vog Ville">     </div>   <nav aria-label="Menu principal" class="main-nav" id="mainNav">
   <section class="menu-group"><button class="menu-group-toggle" type="button" aria-expanded="true">🏆 <span>Competição</span><span class="menu-chevron">⌃</span></button><div class="menu-group-items"><a href="#tabela" data-view="classification">▮ Classificação e jogos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=public" target="_blank" rel="noopener noreferrer">▦ Cronograma e resultados <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=live" target="_blank" rel="noopener noreferrer">◉ Placar ao vivo <span>›</span></a></div></section>
   <section class="menu-group"><button class="menu-group-toggle" type="button" aria-expanded="true">📷 <span>Mídia</span><span class="menu-chevron">⌃</span></button><div class="menu-group-items"><a href="#fotos" data-view="media">▣ Fotos do torneio <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteios" target="_blank" rel="noopener noreferrer">🎁 Sorteios e ganhadores <span>›</span></a></div></section>
   <section class="menu-group"><button class="menu-group-toggle" type="button" aria-expanded="true">📢 <span>Informações</span><span class="menu-chevron">⌃</span></button><div class="menu-group-items"><a href="#avisos" data-view="media">📣 Avisos <span>›</span></a><a href="#avisos" data-view="media">▤ Regulamento e informações <span>›</span></a></div></section>
   <section class="menu-group"><button class="menu-group-toggle" type="button" aria-expanded="true">⚙ <span>Organização</span><span class="menu-chevron">⌃</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec" target="_blank" rel="noopener noreferrer">♟ Área administrativa <span>›</span></a></div></section>
-</nav> <div class="online-wrap"><div class="online-counter" aria-live="polite"><span class="online-dot"></span><span id="onlineCount">Online: contando…</span><span aria-hidden="true"> · </span><span id="visitCount">Visitas: contando…</span></div></div> </div> 
-<nav class="bottom-tabs" aria-label="Navegação principal">
+</nav> <nav class="bottom-tabs" aria-label="Navegação principal">
   <button type="button" class="tab-link active" data-view="home" aria-label="Início"><span aria-hidden="true">⌂</span><small>Início</small></button>
   <button type="button" class="tab-link" data-view="classification" aria-label="Classificação"><span aria-hidden="true">🏆</span><small>Classificação</small></button>
   <a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=public" target="_blank" rel="noopener noreferrer" class="tab-link"><span aria-hidden="true">▦</span><small>Cronograma</small></a>
   <button type="button" class="tab-link" data-view="media" aria-label="Fotos"><span aria-hidden="true">▣</span><small>Fotos</small></button>
   <button type="button" class="tab-link more-tab" id="moreTab" aria-expanded="false" aria-controls="mainNav"><span aria-hidden="true">•••</span><small>Mais</small></button>
-</nav>
+</nav> <div class="online-wrap"><div class="online-counter" aria-live="polite"><span class="online-dot"></span><span id="onlineCount">Online: contando…</span><span aria-hidden="true"> · </span><span id="visitCount">Visitas: contando…</span></div></div> </div> 
+
  <main id="appMain">
   <section id="homeView" class="home-view" aria-label="Página inicial do torneio">
     <div class="home-hero">
@@ -120,7 +136,7 @@ html{scroll-padding-top:150px}body{background:#f3f6f8;padding-bottom:86px}.site-
         <p class="eyebrow">2º OPEN DE</p>
         <h1>TÊNIS</h1>
         <p class="hero-location">CONDOMÍNIO VOG VILLE</p>
-        <div class="hero-meta"><span>▦ 24 a 31 de Outubro de 2026</span><span>⌖ Condomínio Vog Ville</span></div>
+        <div class="hero-meta"><span>▦ 24 de outubro a 1º de novembro de 2026</span><span>⌖ Condomínio Vog Ville</span></div>
       </div>
       <div class="hero-ball" aria-hidden="true">🎾</div>
     </div>
@@ -163,12 +179,12 @@ html{scroll-padding-top:150px}body{background:#f3f6f8;padding-bottom:86px}.site-
 })();
 </script>
 <script>
-(function(){const menu=document.getElementById('mainNav'),buttons=[document.getElementById('moreTab'),document.getElementById('topMenuToggle')].filter(Boolean);if(!menu||!buttons.length)return;
+(function(){const menu=document.getElementById('mainNav'),buttons=[document.getElementById('moreTab')].filter(Boolean);if(!menu||!buttons.length)return;
 function setExpanded(value){buttons.forEach(function(btn){btn.setAttribute('aria-expanded',String(value))})}
 function closeMenu(){menu.classList.remove('menu-open');setExpanded(false)}
-function toggleMenu(btn){const open=!menu.classList.contains('menu-open');menu.classList.toggle('menu-open',open);setExpanded(open);if(open&&btn.id==='topMenuToggle'){const first=menu.querySelector('a');if(first)first.focus()}}
+function toggleMenu(btn){const open=!menu.classList.contains('menu-open');menu.classList.toggle('menu-open',open);setExpanded(open);if(open){const first=menu.querySelector('a');if(first)first.focus()}}
 buttons.forEach(function(btn){btn.addEventListener('click',function(e){e.stopPropagation();toggleMenu(btn)})});
-menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu();const topBtn=document.getElementById('topMenuToggle');if(topBtn)topBtn.focus()}});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!buttons.some(function(btn){return btn.contains(e.target)}))closeMenu()});
+menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()});document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu();const moreBtn=document.getElementById('moreTab');if(moreBtn)moreBtn.focus()}});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!buttons.some(function(btn){return btn.contains(e.target)}))closeMenu()});
 menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.querySelectorAll('a').forEach(x=>x.classList.remove('active'));a.classList.add('active')})});
 menu.querySelectorAll('.menu-group-toggle').forEach(function(btn){btn.addEventListener('click',function(){const group=btn.closest('.menu-group'),collapsed=group.classList.toggle('collapsed');btn.setAttribute('aria-expanded',String(!collapsed));const icon=btn.querySelector('.menu-chevron');if(icon)icon.textContent=collapsed?'⌄':'⌃';})});
 })();
