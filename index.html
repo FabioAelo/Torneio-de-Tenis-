@@ -169,16 +169,17 @@ body{padding-bottom:0!important}#appMain{padding-bottom:24px!important}
 body{padding-top:var(--vog-header-height,260px)!important;}
 html{scroll-padding-top:calc(var(--vog-header-height,260px) + 12px)!important;}
 @media(max-width:700px){.site-header .brand{height:auto!important;max-height:none!important;object-fit:fill!important;}body{padding-top:var(--vog-header-height,170px)!important;}html{scroll-padding-top:calc(var(--vog-header-height,170px) + 10px)!important;}}
+@media(max-width:700px){.sponsors-public-section{padding:22px 8px 26px}.sponsors-public-list{gap:5px}.sponsor-public-card{padding:5px 2px;min-height:65px;gap:3px}.sponsor-public-card img{height:38px}.sponsor-public-card strong{font-size:clamp(.45rem,1.8vw,.68rem)}}
 @media(max-width:380px){.site-header .brand{height:auto!important;max-height:none!important;object-fit:fill!important;}}
 
 .sponsors-public-section{padding:30px 16px 38px;background:#f5f7fa;color:#102d49}
 .sponsors-public-inner{max-width:1180px;margin:0 auto;text-align:center}
 .sponsors-public-inner h2{margin:0 0 8px;font-size:clamp(1.35rem,3vw,2rem)}
 .sponsors-intro{margin:0 0 22px;color:#526579}
-.sponsors-public-list{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:16px}
-.sponsor-public-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:150px;max-width:220px;min-height:120px;padding:16px;background:#fff;border:1px solid #dce4ed;border-radius:14px;box-shadow:0 4px 14px #102d4910;text-decoration:none;color:inherit}
-.sponsor-public-card img{display:block;width:150px;height:90px;max-width:100%;object-fit:contain}
-.sponsor-public-card strong{font-size:.95rem}
+.sponsors-public-list{display:grid;grid-template-columns:repeat(var(--sponsor-count, 1),minmax(0,1fr));justify-content:center;align-items:stretch;gap:10px;width:100%;}
+.sponsor-public-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;min-width:0;max-width:none;min-height:78px;padding:7px 5px;background:#fff;border:1px solid #dce4ed;border-radius:10px;box-shadow:0 4px 14px #102d4910;text-decoration:none;color:inherit;overflow:hidden}
+.sponsor-public-card img{display:block;width:100%;height:52px;max-width:100%;object-fit:contain}
+.sponsor-public-card strong{font-size:clamp(.55rem,.9vw,.78rem);line-height:1.15;text-align:center;overflow-wrap:anywhere}
 .sponsors-public-list>p{margin:0;color:#65758a}
 </style>
 <style id="banner-proporcional-final">.site-header .brand{width:100%!important;height:auto!important;max-height:none!important;object-fit:fill!important;object-position:center!important;display:block!important}@media(max-width:700px){.site-header .brand{height:auto!important;max-height:none!important;object-fit:fill!important}}</style>
@@ -424,7 +425,15 @@ html { scroll-padding-top: 12px !important; }
 </div>
 
 <div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this)closePhotoLightbox()"> <button class="photo-lightbox-close" type="button" aria-label="Fechar foto" onclick="closePhotoLightbox()">×</button> <div class="photo-lightbox-inner"><img id="lightboxImage" alt=""><div id="lightboxCaption" class="photo-lightbox-caption"></div><section class="photo-comments" aria-label="Comentários da foto"><h3>💬 Comentários</h3><div id="photoCommentList" class="comment-list">Carregando comentários…</div><form id="photoCommentForm" class="comment-form"><div><label for="commentName">Seu nome</label><input id="commentName" maxlength="60" required placeholder="Como podemos chamar você?"></div><div><label for="commentText">Comentário</label><textarea id="commentText" maxlength="500" required placeholder="Escreva um comentário respeitoso (até 500 caracteres)"></textarea></div><button type="submit">Publicar comentário</button><div id="commentStatus" class="comment-status" aria-live="polite"></div></form><p class="comment-status">Os comentários são públicos. Não informe telefone, endereço ou outros dados pessoais.</p></section></div> </div> 
-<footer>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</footer>
+<footer class="site-footer">
+  <div>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</div>
+  <div class="developer-credit">Desenvolvido por <a href="https://tcpsolucoes.com/" target="_blank" rel="noopener noreferrer">TCP Soluções em TI</a></div>
+</footer>
+<style>
+.site-footer .developer-credit { margin-top: 6px; font-size: 12px; }
+.site-footer .developer-credit a { color: inherit; font-weight: 700; text-decoration: underline; }
+.site-footer .developer-credit a:hover { opacity: .8; }
+</style>
 <script>
 (function(){
   const API='https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec';
@@ -434,6 +443,7 @@ html { scroll-padding-top: 12px !important; }
   window.vogVilleSponsorsLoaded=function(data){
     const items=data&&data.ok&&Array.isArray(data.sponsors)?data.sponsors:[];
     if(!items.length){target.innerHTML='<p>Os patrocinadores serão divulgados em breve.</p>';return;}
+    target.style.setProperty('--sponsor-count', String(items.length));
     target.innerHTML=items.map(function(item){
       const name=esc(item.nome), logo=esc(item.logo), link=String(item.link||'');
       const content='<img loading="lazy" src="'+logo+'" alt="Logomarca de '+name+'"><strong>'+name+'</strong>';
