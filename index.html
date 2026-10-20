@@ -182,6 +182,19 @@ html{scroll-padding-top:calc(var(--vog-header-height,260px) + 12px)!important;}
 .sponsors-public-list>p{margin:0;color:#65758a}
 </style>
 <style id="banner-proporcional-final">.site-header .brand{width:100%!important;height:auto!important;max-height:none!important;object-fit:fill!important;object-position:center!important;display:block!important}@media(max-width:700px){.site-header .brand{height:auto!important;max-height:none!important;object-fit:fill!important}}</style>
+
+<style id="ajuste-final-banner-layout">
+/* AJUSTE FINAL: banner proporcional e cabeçalho sem sobrepor conteúdo */
+.site-header { position: relative !important; top: auto !important; left: auto !important; right: auto !important; width: 100% !important; overflow: visible !important; }
+.site-header .top { display: block !important; }
+.site-header .wrap { width: 100% !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+.site-header .brand { display: block !important; width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain !important; object-position: center !important; }
+body { padding-top: 0 !important; }
+html { scroll-padding-top: 12px !important; }
+/* Garante que o contador e o conteúdo não fiquem escondidos pelo cabeçalho */
+.site-header .bottom-tabs, .site-header .online-wrap { position: relative !important; }
+@media (max-width: 700px) { .site-header .brand { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain !important; } }
+</style>
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
