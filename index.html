@@ -174,7 +174,7 @@ html{scroll-padding-top:calc(var(--vog-header-height,260px) + 12px)!important;}
 <style>
 
 /* Contagem regressiva oficial — 2º Open de Tênis Vog Ville */
-.countdown-header-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;width:100%;max-width:1120px;margin:0 auto;padding:3px 8px 5px;box-sizing:border-box}
+.countdown-header-row{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-wrap:nowrap;width:100%;max-width:1120px;margin:0 auto;padding:5px 8px 7px;box-sizing:border-box;text-align:center}.countdown-header-row .vog-countdown,.countdown-header-row .vog-countdown-state,.countdown-header-row .online-counter{align-self:center;margin-left:auto;margin-right:auto}.countdown-header-row .online-counter{justify-content:center;text-align:center;max-width:calc(100vw - 18px)}
 .vog-countdown{display:flex;align-items:center;justify-content:center;gap:10px;padding:7px 12px;border:1px solid #d5a94c;border-radius:999px;background:#071f36;color:#fff;box-shadow:0 2px 8px #071f3620;line-height:1.1;max-width:100%;box-sizing:border-box}
 .vog-countdown-label{font-size:12px;font-weight:800;letter-spacing:.2px;white-space:nowrap;color:#ffe08a}
 .vog-countdown-units{display:flex;align-items:center;gap:5px}
@@ -185,7 +185,7 @@ html{scroll-padding-top:calc(var(--vog-header-height,260px) + 12px)!important;}
 .vog-countdown[hidden],.vog-countdown-state[hidden]{display:none!important}
 .online-wrap .online-counter{margin:0 auto}
 @media(max-width:700px){
- .countdown-header-row{flex-direction:column;gap:5px;padding:4px 5px 6px}
+ .countdown-header-row{flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:4px 5px 6px}.countdown-header-row .online-counter{align-self:center;margin:0 auto;justify-content:center;text-align:center;max-width:calc(100vw - 18px)}
  .vog-countdown{width:max-content;max-width:calc(100vw - 16px);gap:7px;padding:6px 8px}
  .vog-countdown-label{font-size:10px}
  .vog-countdown-unit{min-width:27px;padding:2px 3px}
@@ -224,7 +224,9 @@ html{scroll-padding-top:calc(var(--vog-header-height,260px) + 12px)!important;}
 
  </div>
 
- <main id="appMain">
+ </div>
+<!-- Fechamento correto do cabeçalho fixo; o conteúdo abaixo permanece rolável. -->
+<main id="appMain">
   <section id="homeView" class="home-view" aria-label="Página inicial do torneio">
     <div class="home-hero">
       <div class="hero-copy">
