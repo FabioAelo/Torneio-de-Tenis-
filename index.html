@@ -303,6 +303,31 @@ html { scroll-padding-top: 12px !important; }
 @media(max-width:600px){.video-thumb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.video-card{padding:7px}.video-thumb strong{font-size:12px}.video-play-icon{width:42px;height:42px;font-size:18px}.video-lightbox{padding:64px 8px 12px}.video-lightbox-inner{width:100%}.video-lightbox-title{font-size:16px}.video-lightbox-caption{font-size:13px}}
 </style>
 
+<style>
+/* Contagem regressiva oficial — 2º Open de Tênis Vog Ville */
+.countdown-header-row{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-wrap:nowrap;width:100%;max-width:1120px;margin:0 auto;padding:5px 8px 7px;box-sizing:border-box;text-align:center}.countdown-header-row .vog-countdown,.countdown-header-row .vog-countdown-state,.countdown-header-row .online-counter{align-self:center;margin-left:auto;margin-right:auto}.countdown-header-row .online-counter{justify-content:center;text-align:center;max-width:calc(100vw - 18px)}
+.vog-countdown{display:flex;align-items:center;justify-content:center;gap:10px;padding:7px 12px;border:1px solid #d5a94c;border-radius:999px;background:#071f36;color:#fff;box-shadow:0 2px 8px #071f3620;line-height:1.1;max-width:100%;box-sizing:border-box}
+.vog-countdown-label{font-size:12px;font-weight:800;letter-spacing:.2px;white-space:nowrap;color:#ffe08a}
+.vog-countdown-units{display:flex;align-items:center;gap:5px}
+.vog-countdown-unit{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:32px;padding:2px 4px;border-radius:7px;background:#123b59;color:#fff}
+.vog-countdown-unit strong{font-variant-numeric:tabular-nums;font-size:18px;line-height:1.05;font-weight:900;color:#fff}
+.vog-countdown-unit small{font-size:9px;line-height:1.1;text-transform:uppercase;letter-spacing:.35px;color:#d9e6ef;margin-top:3px}
+.vog-countdown-state{font-size:12px;font-weight:800;color:#ffe08a;text-align:center}
+.vog-countdown[hidden],.vog-countdown-state[hidden]{display:none!important}
+.online-wrap .online-counter{margin:0 auto}
+@media(max-width:700px){
+ .countdown-header-row{flex-direction:column;align-items:center;justify-content:center;gap:5px;padding:4px 5px 6px}.countdown-header-row .online-counter{align-self:center;margin:0 auto;justify-content:center;text-align:center;max-width:calc(100vw - 18px)}
+ .vog-countdown{width:max-content;max-width:calc(100vw - 16px);gap:7px;padding:6px 8px}
+ .vog-countdown-label{font-size:10px}
+ .vog-countdown-unit{min-width:27px;padding:2px 3px}
+ .vog-countdown-unit strong{font-size:16px}
+ .vog-countdown-unit small{font-size:8px}
+ .online-wrap{padding:5px 6px!important}
+}
+@media(max-width:360px){.vog-countdown-label{font-size:9px}.vog-countdown{gap:5px;padding:5px 6px}.vog-countdown-unit{min-width:24px}.vog-countdown-unit strong{font-size:14px}}
+
+
+</style>
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
@@ -314,7 +339,21 @@ html { scroll-padding-top: 12px !important; }
   <button type="button" class="tab-link" data-view="notices" aria-label="Avisos"><span aria-hidden="true">📣</span><small>Avisos</small></button>
   <a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteios" target="_blank" rel="noopener noreferrer" class="tab-link" aria-label="Sorteios"><span aria-hidden="true">🎁</span><small>Sorteios</small></a>
   <button type="button" class="tab-link more-tab" id="moreTab" aria-expanded="false" aria-controls="mainNav"><span aria-hidden="true">•••</span><small>Mais</small></button>
-</nav> <div class="online-wrap"><div class="online-counter" aria-live="polite"><span class="online-dot"></span><span id="onlineCount">Online: contando…</span><span aria-hidden="true"> · </span><span id="visitCount">Visitas: contando…</span></div></div> </div> 
+</nav> <div class="online-wrap">
+  <div class="countdown-header-row" aria-label="Contagem regressiva e visitas do site">
+    <div class="vog-countdown" id="vogCountdown" role="timer" aria-live="off" aria-label="Contagem regressiva para a abertura do torneio">
+      <span class="vog-countdown-label">🎾 FALTAM PARA O OPEN</span>
+      <span class="vog-countdown-units">
+        <span class="vog-countdown-unit"><strong id="vogCountdownDays">--</strong><small>dias</small></span>
+        <span class="vog-countdown-unit"><strong id="vogCountdownHours">--</strong><small>horas</small></span>
+        <span class="vog-countdown-unit"><strong id="vogCountdownMinutes">--</strong><small>min</small></span>
+        <span class="vog-countdown-unit"><strong id="vogCountdownSeconds">--</strong><small>seg</small></span>
+      </span>
+    </div>
+    <div class="vog-countdown-state" id="vogCountdownState" hidden>🎾 O TORNEIO ESTÁ EM ANDAMENTO!</div>
+    <div class="online-counter" aria-live="polite"><span class="online-dot"></span><span id="onlineCount">Online: contando…</span><span aria-hidden="true"> · </span><span id="visitCount">Visitas: contando…</span></div>
+  </div>
+</div> </div> 
 
  </div>
 
@@ -432,16 +471,18 @@ menu.querySelectorAll('.menu-group-toggle').forEach(function(btn){btn.addEventLi
 </script>  <script> (function(){  const API='https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec';  function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}  function showError(){['gallery','videosList','notices'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<p>Não foi possível carregar agora. Tente atualizar a página.</p>'})}  window.vogVillePostsLoaded=function(data){    const posts=Array.isArray(data)?data:((data&&Array.isArray(data.posts))?data.posts:[]);    const photos=posts.filter(p=>p.type==='foto'), videos=posts.filter(p=>p.type==='video'), notices=posts.filter(p=>p.type==='aviso');    const gallery=document.getElementById('gallery'), videosEl=document.getElementById('videosList'), noticesEl=document.getElementById('notices');    if(gallery) gallery.innerHTML=photos.length?photos.map((p,i)=>'<button type="button" class="photo-thumb" data-photo-id="'+esc(p.id)+'" data-photo-url="'+esc(p.photoUrl)+'" data-photo-title="'+esc(p.title)+'" data-photo-caption="'+esc(p.text)+'" aria-label="Ampliar foto: '+esc(p.title)+'"><img loading="lazy" src="'+esc(p.photoUrl)+'" alt="'+esc(p.title)+'"><strong>'+esc(p.title)+'</strong></button>').join(''):'<p>Nenhuma foto publicada ainda.</p>';    if(videosEl) videosEl.innerHTML=videos.length?'<div class="video-thumb-grid">'+videos.map(p=>'<article class="video-card"><button type="button" class="video-thumb" data-video-url="'+esc(p.videoUrl||p.photoUrl||'')+'" data-video-title="'+esc(p.title)+'" data-video-caption="'+esc(p.text)+'" aria-label="Assistir vídeo: '+esc(p.title)+'"><span class="video-thumb-image">'+(p.photoUrl?'<img loading="lazy" src="'+esc(p.photoUrl)+'" alt="Miniatura do vídeo '+esc(p.title)+'">':'<span class="video-no-image">Vídeo</span>')+'<span class="video-play-icon" aria-hidden="true">▶</span></span><strong>'+esc(p.title)+'</strong></button><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join('')+'</div>':'<p>Nenhum vídeo publicado ainda.</p>';
     if(noticesEl) noticesEl.innerHTML=notices.length?notices.map(p=>'<article class="public-post"><h4>📢 '+esc(p.title)+'</h4><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join(''):'<p>Nenhum aviso publicado ainda.</p>'; const preview=document.getElementById('homeNewsPreview'); if(preview) preview.innerHTML=notices.length?'<article class="public-post"><h4>📢 '+esc(notices[0].title)+'</h4><p>'+esc(notices[0].text)+'</p><time>'+esc(dateText(notices[0].date))+'</time></article>':'';  };  function dateText(s){if(!s)return '';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('pt-BR')}  function load(){const callback='vogVillePostsLoaded';const s=document.createElement('script');s.src=API+'?api=posts&callback='+callback+'&t='+Date.now();s.onerror=showError;document.body.appendChild(s)}  document.addEventListener('click',function(event){const thumb=event.target.closest('.photo-thumb');if(!thumb)return;openPhotoLightbox(thumb.dataset.photoId,thumb.dataset.photoUrl,thumb.dataset.photoTitle,thumb.dataset.photoCaption)}); load(); })();
 (function(){
- const API='https://script.google.com/macros/s/AKfycbwprJT7-qbCwfSgRg_0hZGsmqySkMBouBSQt-m4Ka8Iiv0loMkAIP5AXfObTx1_Uk0/exec';
- const output=document.getElementById('onlineCount'); if(!output)return;
+ // Contadores online e de visitas usando a implantação atual do Apps Script.
+ const API='https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec';
+ const output=document.getElementById('onlineCount');
  const visits=document.getElementById('visitCount');
+ if(!output||!visits)return;
  let sid='';
  try{sid=localStorage.getItem('vogVilleOnlineSession')||'';if(!sid){sid=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'vv-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);localStorage.setItem('vogVilleOnlineSession',sid)}}catch(e){sid='vv-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2)}
- let busy=false, visitBusy=false;
+ let busy=false,visitBusy=false;
  window.vogVillePresenceCallback=function(data){busy=false;if(data&&typeof data.online==='number'){output.textContent='Online: '+data.online}else{output.textContent='Online: indisponível'}};
  function ping(){if(busy||document.visibilityState==='hidden')return;busy=true;const old=document.getElementById('presenceJsonp');if(old)old.remove();const script=document.createElement('script');script.id='presenceJsonp';script.onerror=function(){busy=false;output.textContent='Online: indisponível';script.remove()};script.src=API+'?api=presence&sid='+encodeURIComponent(sid)+'&callback=vogVillePresenceCallback&t='+Date.now();document.body.appendChild(script)}
- window.vogVilleVisitCallback=function(data){visitBusy=false;if(visits&&data&&data.ok&&typeof data.visits==='number'){const today=typeof data.todayVisits==='number'?data.todayVisits:'—';visits.textContent='Total: '+data.visits+' · Hoje: '+today;try{sessionStorage.setItem('vogVilleVisitCounted','1')}catch(e){}}else if(visits){visits.textContent='Visitas: indisponíveis';try{sessionStorage.removeItem('vogVilleVisitCounted')}catch(e){}}};
- function countVisit(){if(visitBusy)return;try{if(sessionStorage.getItem('vogVilleVisitCounted'))return}catch(e){}visitBusy=true;const old=document.getElementById('visitJsonp');if(old)old.remove();const script=document.createElement('script');script.id='visitJsonp';script.onerror=function(){visitBusy=false;if(visits)visits.textContent='Visitas: indisponíveis';script.remove();try{sessionStorage.removeItem('vogVilleVisitCounted')}catch(e){}};script.src=API+'?api=visit&callback=vogVilleVisitCallback&t='+Date.now();document.body.appendChild(script)}
+ window.vogVilleVisitCallback=function(data){visitBusy=false;if(data&&data.ok&&typeof data.visits==='number'){const today=typeof data.todayVisits==='number'?data.todayVisits:'—';const display='Total: '+data.visits+' · Hoje: '+today;visits.textContent=display;try{sessionStorage.setItem('vogVilleVisitCounted','1');sessionStorage.setItem('vogVilleVisitDisplay',display)}catch(e){}}else{visits.textContent='Visitas: indisponíveis'}};
+ function countVisit(){if(visitBusy)return;try{const cached=sessionStorage.getItem('vogVilleVisitDisplay');if(sessionStorage.getItem('vogVilleVisitCounted')&&cached){visits.textContent=cached;return}}catch(e){}visitBusy=true;const old=document.getElementById('visitJsonp');if(old)old.remove();const script=document.createElement('script');script.id='visitJsonp';script.onerror=function(){visitBusy=false;visits.textContent='Visitas: indisponíveis';script.remove()};script.src=API+'?api=visit&callback=vogVilleVisitCallback&t='+Date.now();document.body.appendChild(script)}
  countVisit();ping();setInterval(ping,30000);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')ping()});
 })(); let currentCommentPhotoId='';
 function jsonp(params,callbackName){const old=document.getElementById('commentsJsonp');if(old)old.remove();const script=document.createElement('script');script.id='commentsJsonp';params.callback=callbackName;params.t=Date.now();script.onerror=function(){if(callbackName==='vogPhotoCommentsLoaded')document.getElementById('photoCommentList').textContent='Não foi possível carregar os comentários.';if(callbackName==='vogPhotoCommentAdded')document.getElementById('commentStatus').textContent='Não foi possível enviar. Tente novamente.';script.remove()};script.src='https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?'+new URLSearchParams(params).toString();document.body.appendChild(script)}
@@ -552,6 +593,32 @@ body { position:static !important; height:auto !important; min-height:100% !impo
   window.closeVideoLightbox=function(){modal.classList.remove('open');player.replaceChildren();document.body.style.overflow='';};
   document.addEventListener('click',function(e){const btn=e.target.closest('.video-thumb');if(!btn)return;openVideoLightbox(btn.dataset.videoUrl,btn.dataset.videoTitle,btn.dataset.videoCaption)});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeVideoLightbox()});
+})();
+</script>
+
+
+<script>
+/* Contagem regressiva: abertura do torneio em 24/10/2026 às 08h (horário de Salvador/Brasília). */
+(function(){
+  var target = new Date('2026-10-24T08:00:00-03:00').getTime();
+  var countdown = document.getElementById('vogCountdown');
+  var state = document.getElementById('vogCountdownState');
+  var days = document.getElementById('vogCountdownDays');
+  var hours = document.getElementById('vogCountdownHours');
+  var minutes = document.getElementById('vogCountdownMinutes');
+  var seconds = document.getElementById('vogCountdownSeconds');
+  if(!countdown || !state || !days || !hours || !minutes || !seconds) return;
+  function tick(){
+    var remaining = target - Date.now();
+    if(remaining <= 0){ countdown.hidden = true; state.hidden = false; return; }
+    countdown.hidden = false; state.hidden = true;
+    var total = Math.floor(remaining / 1000);
+    days.textContent = String(Math.floor(total / 86400)).padStart(2,'0');
+    hours.textContent = String(Math.floor((total % 86400) / 3600)).padStart(2,'0');
+    minutes.textContent = String(Math.floor((total % 3600) / 60)).padStart(2,'0');
+    seconds.textContent = String(total % 60).padStart(2,'0');
+  }
+  tick(); window.setInterval(tick,1000);
 })();
 </script>
 
