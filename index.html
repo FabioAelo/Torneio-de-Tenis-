@@ -195,6 +195,114 @@ html { scroll-padding-top: 12px !important; }
 .site-header .bottom-tabs, .site-header .online-wrap { position: relative !important; }
 @media (max-width: 700px) { .site-header .brand { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain !important; } }
 </style>
+
+<style id="photo-lightbox-fullscreen-fix">
+/* Visualizador de fotos em tela cheia */
+.photo-lightbox {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 99999 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  padding: 58px 2vw 12px !important;
+  overflow: hidden !important;
+  background: rgba(3, 12, 22, .97) !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+.photo-lightbox.open { display: flex !important; }
+.photo-lightbox-inner {
+  width: 100% !important;
+  max-width: 1500px !important;
+  height: 100% !important;
+  max-height: none !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  text-align: center !important;
+}
+.photo-lightbox img {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 96vw !important;
+  max-height: 70vh !important;
+  max-height: 70dvh !important;
+  object-fit: contain !important;
+  flex: 0 1 auto !important;
+  margin: 0 auto !important;
+  border-radius: 5px !important;
+  background: #101820 !important;
+}
+.photo-lightbox-caption {
+  flex: 0 0 auto !important;
+  max-width: 96vw !important;
+  max-height: 7vh !important;
+  overflow: auto !important;
+  color: #fff !important;
+}
+.photo-comments {
+  width: min(760px, 96vw) !important;
+  max-height: 20vh !important;
+  flex: 0 1 auto !important;
+  overflow-y: auto !important;
+  margin: 0 auto !important;
+  padding: 9px 12px !important;
+}
+.photo-comments h3 { font-size: 16px !important; margin-bottom: 6px !important; }
+.photo-comments form { gap: 6px !important; }
+.photo-lightbox-close {
+  position: fixed !important;
+  z-index: 100001 !important;
+  top: max(10px, env(safe-area-inset-top)) !important;
+  right: max(12px, env(safe-area-inset-right)) !important;
+  width: 46px !important;
+  height: 46px !important;
+  font-size: 32px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 2px 14px #0008 !important;
+}
+@media (max-width: 700px) {
+  .photo-lightbox { padding: 58px 8px 8px !important; }
+  .photo-lightbox-inner { gap: 7px !important; }
+  .photo-lightbox img { max-width: 98vw !important; max-height: 61vh !important; max-height: 61dvh !important; }
+  .photo-lightbox-caption { max-width: 98vw !important; max-height: 6vh !important; font-size: 13px !important; }
+  .photo-comments { width: 98vw !important; max-height: 25vh !important; padding: 8px !important; }
+  .photo-comments input, .photo-comments textarea { font-size: 16px !important; }
+}
+</style>
+
+
+<style id="video-thumbnails-modal-styles">
+.video-thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;align-items:start}
+.video-card{min-width:0;border:1px solid #d0dbe5;border-radius:10px;padding:10px;background:#fff;overflow:hidden}
+.video-thumb{display:block;width:100%;padding:0;border:0;background:transparent;color:#102d49;text-align:left;cursor:pointer;font:inherit}
+.video-thumb-image{display:block;position:relative;width:100%;aspect-ratio:16/9;background:#102d49;border-radius:7px;overflow:hidden;margin-bottom:8px}
+.video-thumb-image img{display:block;width:100%;height:100%;object-fit:cover}
+.video-no-image{display:flex;width:100%;height:100%;align-items:center;justify-content:center;color:#fff;font-weight:bold}
+.video-play-icon{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center;width:54px;height:54px;border-radius:50%;background:#071f36dd;border:2px solid #fff;color:#fff;font-size:23px;padding-left:4px;box-shadow:0 2px 12px #0005}
+.video-thumb:hover .video-play-icon,.video-thumb:focus-visible .video-play-icon{background:#087a59;transform:translate(-50%,-50%) scale(1.07)}
+.video-thumb strong{display:block;font-size:14px;line-height:1.35;overflow-wrap:anywhere}
+.video-card p{font-size:13px;line-height:1.4;color:#52687b;white-space:pre-wrap;margin:7px 0 0;overflow-wrap:anywhere}
+.video-card time{display:block;font-size:11px;color:#65778a;margin-top:7px}
+.video-lightbox{position:fixed;inset:0;z-index:1200;display:none;align-items:center;justify-content:center;background:rgba(2,10,18,.96);padding:64px 22px 22px}
+.video-lightbox.open{display:flex}
+.video-lightbox-inner{width:min(1200px,96vw);max-height:92vh;color:#fff;text-align:center}
+.video-player-frame{position:relative;width:100%;aspect-ratio:16/9;max-height:78vh;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 8px 32px #0008}
+.video-player-frame iframe,.video-player-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}
+.video-lightbox-title{font-size:18px;font-weight:bold;margin:12px 0 5px;overflow-wrap:anywhere}
+.video-lightbox-caption{font-size:14px;line-height:1.45;color:#dce6ef;max-height:12vh;overflow:auto;white-space:pre-wrap}
+.video-lightbox-close{position:fixed;top:12px;right:16px;width:46px;height:46px;border:0;border-radius:50%;background:#fff;color:#102d49;font-size:30px;line-height:1;cursor:pointer;box-shadow:0 2px 10px #0006}
+.video-lightbox-open-link{display:inline-block;color:#ffe08a;margin-top:10px;font-size:13px}
+.video-thumb:focus-visible,.video-lightbox-close:focus-visible{outline:3px solid #f0c34e;outline-offset:3px}
+@media(max-width:600px){.video-thumb-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.video-card{padding:7px}.video-thumb strong{font-size:12px}.video-play-icon{width:42px;height:42px;font-size:18px}.video-lightbox{padding:64px 8px 12px}.video-lightbox-inner{width:100%}.video-lightbox-title{font-size:16px}.video-lightbox-caption{font-size:13px}}
+</style>
+
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
@@ -265,6 +373,17 @@ html { scroll-padding-top: 12px !important; }
     <div id="sponsorsPublicList" class="sponsors-public-list" aria-live="polite"><p>Carregando patrocinadores…</p></div>
   </div>
 </section>
+
+<div id="videoLightbox" class="video-lightbox" role="dialog" aria-modal="true" aria-label="Vídeo ampliado" onclick="if(event.target===this)closeVideoLightbox()">
+  <button type="button" class="video-lightbox-close" aria-label="Fechar vídeo" onclick="closeVideoLightbox()">×</button>
+  <div class="video-lightbox-inner">
+    <div id="videoPlayerFrame" class="video-player-frame"></div>
+    <div id="videoLightboxTitle" class="video-lightbox-title"></div>
+    <div id="videoLightboxCaption" class="video-lightbox-caption"></div>
+    <a id="videoOpenOriginal" class="video-lightbox-open-link" href="#" target="_blank" rel="noopener noreferrer" hidden>Abrir vídeo no site original</a>
+  </div>
+</div>
+
 <div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this)closePhotoLightbox()"> <button class="photo-lightbox-close" type="button" aria-label="Fechar foto" onclick="closePhotoLightbox()">×</button> <div class="photo-lightbox-inner"><img id="lightboxImage" alt=""><div id="lightboxCaption" class="photo-lightbox-caption"></div><section class="photo-comments" aria-label="Comentários da foto"><h3>💬 Comentários</h3><div id="photoCommentList" class="comment-list">Carregando comentários…</div><form id="photoCommentForm" class="comment-form"><div><label for="commentName">Seu nome</label><input id="commentName" maxlength="60" required placeholder="Como podemos chamar você?"></div><div><label for="commentText">Comentário</label><textarea id="commentText" maxlength="500" required placeholder="Escreva um comentário respeitoso (até 500 caracteres)"></textarea></div><button type="submit">Publicar comentário</button><div id="commentStatus" class="comment-status" aria-live="polite"></div></form><p class="comment-status">Os comentários são públicos. Não informe telefone, endereço ou outros dados pessoais.</p></section></div> </div> 
 <footer>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</footer>
 <script>
@@ -310,7 +429,7 @@ menu.addEventListener('click',function(e){if(e.target.closest('a'))closeMenu()})
 menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.querySelectorAll('a').forEach(x=>x.classList.remove('active'));a.classList.add('active')})});
 menu.querySelectorAll('.menu-group-toggle').forEach(function(btn){btn.addEventListener('click',function(){const group=btn.closest('.menu-group'),collapsed=group.classList.toggle('collapsed');btn.setAttribute('aria-expanded',String(!collapsed));const icon=btn.querySelector('.menu-chevron');if(icon)icon.textContent=collapsed?'⌄':'⌃';})});
 })();
-</script>  <script> (function(){  const API='https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec';  function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}  function showError(){['gallery','videosList','notices'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<p>Não foi possível carregar agora. Tente atualizar a página.</p>'})}  window.vogVillePostsLoaded=function(data){    const posts=Array.isArray(data)?data:((data&&Array.isArray(data.posts))?data.posts:[]);    const photos=posts.filter(p=>p.type==='foto'), videos=posts.filter(p=>p.type==='video'), notices=posts.filter(p=>p.type==='aviso');    const gallery=document.getElementById('gallery'), videosEl=document.getElementById('videosList'), noticesEl=document.getElementById('notices');    if(gallery) gallery.innerHTML=photos.length?photos.map((p,i)=>'<button type="button" class="photo-thumb" data-photo-id="'+esc(p.id)+'" data-photo-url="'+esc(p.photoUrl)+'" data-photo-title="'+esc(p.title)+'" data-photo-caption="'+esc(p.text)+'" aria-label="Ampliar foto: '+esc(p.title)+'"><img loading="lazy" src="'+esc(p.photoUrl)+'" alt="'+esc(p.title)+'"><strong>'+esc(p.title)+'</strong></button>').join(''):'<p>Nenhuma foto publicada ainda.</p>';    if(videosEl) videosEl.innerHTML=videos.length?videos.map(p=>'<article class="public-post video-post"><a href="'+esc(p.videoUrl||p.photoUrl||'#')+'" target="_blank" rel="noopener noreferrer"><img loading="lazy" src="'+esc(p.photoUrl||'')+'" alt="Miniatura do vídeo '+esc(p.title)+'" style="display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:7px;margin-bottom:8px"><strong>▶️ '+esc(p.title)+'</strong></a><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join(''):'<p>Nenhum vídeo publicado ainda.</p>';
+</script>  <script> (function(){  const API='https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec';  function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}  function showError(){['gallery','videosList','notices'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<p>Não foi possível carregar agora. Tente atualizar a página.</p>'})}  window.vogVillePostsLoaded=function(data){    const posts=Array.isArray(data)?data:((data&&Array.isArray(data.posts))?data.posts:[]);    const photos=posts.filter(p=>p.type==='foto'), videos=posts.filter(p=>p.type==='video'), notices=posts.filter(p=>p.type==='aviso');    const gallery=document.getElementById('gallery'), videosEl=document.getElementById('videosList'), noticesEl=document.getElementById('notices');    if(gallery) gallery.innerHTML=photos.length?photos.map((p,i)=>'<button type="button" class="photo-thumb" data-photo-id="'+esc(p.id)+'" data-photo-url="'+esc(p.photoUrl)+'" data-photo-title="'+esc(p.title)+'" data-photo-caption="'+esc(p.text)+'" aria-label="Ampliar foto: '+esc(p.title)+'"><img loading="lazy" src="'+esc(p.photoUrl)+'" alt="'+esc(p.title)+'"><strong>'+esc(p.title)+'</strong></button>').join(''):'<p>Nenhuma foto publicada ainda.</p>';    if(videosEl) videosEl.innerHTML=videos.length?'<div class="video-thumb-grid">'+videos.map(p=>'<article class="video-card"><button type="button" class="video-thumb" data-video-url="'+esc(p.videoUrl||p.photoUrl||'')+'" data-video-title="'+esc(p.title)+'" data-video-caption="'+esc(p.text)+'" aria-label="Assistir vídeo: '+esc(p.title)+'"><span class="video-thumb-image">'+(p.photoUrl?'<img loading="lazy" src="'+esc(p.photoUrl)+'" alt="Miniatura do vídeo '+esc(p.title)+'">':'<span class="video-no-image">Vídeo</span>')+'<span class="video-play-icon" aria-hidden="true">▶</span></span><strong>'+esc(p.title)+'</strong></button><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join('')+'</div>':'<p>Nenhum vídeo publicado ainda.</p>';
     if(noticesEl) noticesEl.innerHTML=notices.length?notices.map(p=>'<article class="public-post"><h4>📢 '+esc(p.title)+'</h4><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join(''):'<p>Nenhum aviso publicado ainda.</p>'; const preview=document.getElementById('homeNewsPreview'); if(preview) preview.innerHTML=notices.length?'<article class="public-post"><h4>📢 '+esc(notices[0].title)+'</h4><p>'+esc(notices[0].text)+'</p><time>'+esc(dateText(notices[0].date))+'</time></article>':'';  };  function dateText(s){if(!s)return '';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('pt-BR')}  function load(){const callback='vogVillePostsLoaded';const s=document.createElement('script');s.src=API+'?api=posts&callback='+callback+'&t='+Date.now();s.onerror=showError;document.body.appendChild(s)}  document.addEventListener('click',function(event){const thumb=event.target.closest('.photo-thumb');if(!thumb)return;openPhotoLightbox(thumb.dataset.photoId,thumb.dataset.photoUrl,thumb.dataset.photoTitle,thumb.dataset.photoCaption)}); load(); })();
 (function(){
  const API='https://script.google.com/macros/s/AKfycbwprJT7-qbCwfSgRg_0hZGsmqySkMBouBSQt-m4Ka8Iiv0loMkAIP5AXfObTx1_Uk0/exec';
@@ -382,6 +501,57 @@ body { position:static !important; height:auto !important; min-height:100% !impo
   if(header && 'ResizeObserver' in window){ new ResizeObserver(syncHeaderHeight).observe(header); }
   var brand=document.querySelector('.site-header .brand');
   if(brand){ brand.addEventListener('load', syncHeaderHeight, {once:true}); }
+})();
+</script>
+
+
+<script id="video-thumbnails-modal-script">
+(function(){
+  const modal=document.getElementById('videoLightbox');
+  const player=document.getElementById('videoPlayerFrame');
+  const titleEl=document.getElementById('videoLightboxTitle');
+  const captionEl=document.getElementById('videoLightboxCaption');
+  const originalLink=document.getElementById('videoOpenOriginal');
+  if(!modal||!player)return;
+  function embedSource(raw){
+    let u; try{u=new URL(raw,location.href)}catch(e){return {type:'link',url:raw}}
+    const host=u.hostname.replace(/^www\./,'').toLowerCase();
+    let id='';
+    if(host==='youtu.be') id=u.pathname.split('/').filter(Boolean)[0]||'';
+    else if(host.endsWith('youtube.com')){
+      if(u.pathname==='/watch')id=u.searchParams.get('v')||'';
+      else if(/^\/(embed|shorts|live)\//.test(u.pathname))id=u.pathname.split('/')[2]||'';
+    }
+    if(id)return {type:'iframe',url:'https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0'};
+    if(host==='vimeo.com'||host==='player.vimeo.com'){
+      const match=u.pathname.match(/(?:video\/)?(\d+)/);if(match)return {type:'iframe',url:'https://player.vimeo.com/video/'+match[1]+'?autoplay=1'};
+    }
+    const driveId=(u.pathname.match(/\/file\/d\/([^/]+)/)||[])[1]||u.searchParams.get('id');
+    if(host.endsWith('drive.google.com')&&driveId)return {type:'iframe',url:'https://drive.google.com/file/d/'+encodeURIComponent(driveId)+'/preview'};
+    if(/\.(mp4|webm|ogg)(?:$|\?)/i.test(raw))return {type:'video',url:raw};
+    if(host.endsWith('youtube.com')||host==='youtu.be'||host.endsWith('vimeo.com'))return {type:'iframe',url:raw};
+    return {type:'link',url:raw};
+  }
+  window.openVideoLightbox=function(raw,title,caption){
+    const source=embedSource(raw||'');
+    player.replaceChildren();
+    titleEl.textContent=title||'Vídeo do torneio';
+    captionEl.textContent=caption||'';
+    originalLink.href=raw||'#'; originalLink.hidden=!raw;
+    if(source.type==='iframe'){
+      const frame=document.createElement('iframe');frame.src=source.url;frame.title=title||'Vídeo do torneio';
+      frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';frame.allowFullscreen=true;frame.referrerPolicy='strict-origin-when-cross-origin';player.appendChild(frame);
+    }else if(source.type==='video'){
+      const video=document.createElement('video');video.src=source.url;video.controls=true;video.autoplay=true;video.playsInline=true;player.appendChild(video);
+    }else{
+      const msg=document.createElement('div');msg.style.cssText='position:absolute;inset:0;display:flex;flex-direction:column;gap:12px;align-items:center;justify-content:center;color:white;padding:20px';
+      msg.textContent='Este endereço não permite reprodução incorporada. Use o link abaixo para assistir ao vídeo.';player.appendChild(msg);
+    }
+    modal.classList.add('open');document.body.style.overflow='hidden';
+  };
+  window.closeVideoLightbox=function(){modal.classList.remove('open');player.replaceChildren();document.body.style.overflow='';};
+  document.addEventListener('click',function(e){const btn=e.target.closest('.video-thumb');if(!btn)return;openVideoLightbox(btn.dataset.videoUrl,btn.dataset.videoTitle,btn.dataset.videoCaption)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeVideoLightbox()});
 })();
 </script>
 
