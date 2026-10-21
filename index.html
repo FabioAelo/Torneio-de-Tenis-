@@ -329,6 +329,31 @@ html { scroll-padding-top: 12px !important; }
 
 
 </style>
+
+<style id="vogville-tournament-redesign">
+:root{--vv-navy:#071f36;--vv-green:#087a59;--vv-gold:#f0c34e;--vv-line:#dce5ec}
+.tournament-hub{margin:0 0 18px}
+.tournament-hub .hub-intro{background:#fff;border:1px solid var(--vv-line);border-left:5px solid var(--vv-green);border-radius:12px;padding:15px;margin-bottom:14px}
+.tournament-hub .hub-intro h2{margin:0 0 6px;color:var(--vv-navy);font-size:21px}
+.tournament-hub .hub-intro p{margin:0;color:#617386;line-height:1.5;font-size:14px}
+.tournament-hub .hub-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:14px 0}
+.tournament-hub .hub-tab{display:block;text-align:left;border:1px solid var(--vv-line);border-radius:11px;padding:13px;background:#fff;color:var(--vv-navy);cursor:pointer;font-weight:800;min-height:76px}
+.tournament-hub .hub-tab strong{display:block;font-size:14px;margin-bottom:5px}
+.tournament-hub .hub-tab small{display:block;color:#617386;font-size:11px;font-weight:500;line-height:1.35}
+.tournament-hub .hub-tab.active{background:var(--vv-navy);color:#fff;border-color:var(--vv-gold);box-shadow:inset 0 -3px var(--vv-gold)}
+.tournament-hub .hub-tab.active small{color:#e0e9f0}
+.tournament-hub .hub-panel{display:none}
+.tournament-hub .hub-panel.active{display:block}
+.tournament-hub .hub-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:12px 0}
+.tournament-hub .hub-card{background:#fff;border:1px solid var(--vv-line);border-top:4px solid var(--vv-green);border-radius:12px;padding:15px}
+.tournament-hub .hub-card h3{margin:0 0 7px;color:var(--vv-navy);font-size:16px}
+.tournament-hub .hub-card p{margin:0 0 13px;color:#617386;font-size:13px;line-height:1.45}
+.tournament-hub .hub-card .button{width:100%}
+.tournament-hub .official-note{background:#fff8df;border:1px solid #f0d987;border-radius:10px;padding:12px 14px;color:#695315;font-size:12px;line-height:1.5;margin:12px 0}
+.tournament-hub .hub-panel .panel{margin-top:12px}
+@media(max-width:700px){.tournament-hub .hub-tabs{gap:6px}.tournament-hub .hub-tab{padding:10px 8px;min-height:82px}.tournament-hub .hub-tab strong{font-size:12px}.tournament-hub .hub-tab small{font-size:10px}.tournament-hub .hub-card-grid{grid-template-columns:1fr}.tournament-hub .hub-intro h2{font-size:19px}}
+</style>
+
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
@@ -384,12 +409,44 @@ html { scroll-padding-top: 12px !important; }
   </section>
 
   <section id="tabela" class="section-block view-panel" aria-label="Classificação e jogos" hidden>
-    <div class="view-heading"><button type="button" class="back-home" data-view="home">‹ Início</button><h1 class="section-title">Classificação e jogos</h1><p class="description">Acompanhe a classificação geral e as informações do 2º Open de Tênis do Condomínio Vog Ville.</p></div>
+    <div class="view-heading"><button type="button" class="back-home" data-view="home">‹ Início</button><h1 class="section-title">🏆 Torneio: chaves, jogos e classificação</h1><p class="description">Acesse a programação oficial, acompanhe as partidas e consulte a classificação do 2º Open de Tênis Vog Ville.</p></div>
+
+    <div class="tournament-hub" id="tournamentHub">
+      <div class="hub-intro">
+        <h2>O torneio em um só lugar</h2>
+        <p>Escolha uma área abaixo. Os resultados e horários oficiais continuam sendo consultados nas fontes da organização.</p>
+      </div>
+      <div class="hub-tabs" role="tablist" aria-label="Áreas do torneio">
+        <button type="button" class="hub-tab active" data-hub-tab="chaves" role="tab" aria-selected="true"><strong>🏆 Chaves e fases</strong><small>Consulte as categorias e o andamento das fases.</small></button>
+        <button type="button" class="hub-tab" data-hub-tab="agenda" role="tab" aria-selected="false"><strong>📅 Agenda de jogos</strong><small>Veja a programação e os resultados oficiais.</small></button>
+        <button type="button" class="hub-tab" data-hub-tab="classificacao" role="tab" aria-selected="false"><strong>📊 Classificação</strong><small>Consulte a planilha atualizada do torneio.</small></button>
+      </div>
+
+      <section class="hub-panel active" data-hub-panel="chaves" role="tabpanel">
+        <div class="official-note"><strong>Informação oficial:</strong> esta área não inventa confrontos nem placares. Consulte a planilha e o cronograma publicados pela organização para confirmar os participantes classificados e as chaves válidas.</div>
+        <div class="hub-card-grid">
+          <article class="hub-card"><h3>👥 Duplas</h3><p>Consulte os confrontos, os resultados e as próximas fases da modalidade de duplas.</p><button type="button" class="button hub-go-sheet" data-target="planilha">Abrir dados oficiais</button></article>
+          <article class="hub-card"><h3>🎾 Simples</h3><p>Consulte as categorias individuais e acompanhe a evolução das partidas conforme os resultados forem lançados.</p><button type="button" class="button hub-go-sheet" data-target="planilha">Abrir dados oficiais</button></article>
+        </div>
+      </section>
+
+      <section class="hub-panel" data-hub-panel="agenda" role="tabpanel">
+        <div class="hub-card-grid">
+          <article class="hub-card"><h3>📅 Cronograma oficial</h3><p>Confira horários, quadras e programação das partidas na página pública da organização.</p><a class="button primary" href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=public" target="_blank" rel="noopener noreferrer">Abrir cronograma</a></article>
+          <article class="hub-card"><h3>🎾 Placar ao vivo</h3><p>Acompanhe os pontos e os games da partida em andamento. O lançamento continua restrito à organização.</p><a class="button primary" href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=live" target="_blank" rel="noopener noreferrer">Acompanhar placar</a></article>
+        </div>
+      </section>
+
+      <section class="hub-panel" data-hub-panel="classificacao" role="tabpanel">
+        <div class="official-note">A planilha abaixo é a fonte oficial incorporada ao site. Use as abas disponíveis nela para consultar classificação, programação e resultados.</div>
+        <section class="panel" id="planilha"><div class="panel-heading"><div><h2>📊 Classificação e programação</h2><p>Dados publicados na planilha oficial do torneio.</p></div></div><iframe class="sheet-frame" title="Planilha oficial de classificação, programação e resultados" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml?gid=1326897830&single=true" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></section>
+      </section>
+    </div>
+
     <section class="panel section-block" id="placar">
       <div class="panel-heading"><div><h2>🎾 Acompanhar placar ao vivo</h2><p>Visualização pública dos pontos em andamento, sem controles de edição.</p></div><span class="live-indicator"><span class="live-dot"></span> ATUALIZAÇÃO AUTOMÁTICA</span></div>
       <div class="live-callout"><p>Veja os pontos, games e sets da partida em andamento. O lançamento continua restrito à organização.</p><a class="button primary" href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=live" target="_blank" rel="noopener noreferrer">🎾 Abrir placar ao vivo</a><a class="button secondary" href="https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec?page=public" target="_blank" rel="noopener noreferrer">📅 Cronograma e resultados</a></div>
     </section>
-    <section class="panel" id="planilha"><div class="panel-heading"><div><h2>📊 Classificação e programação</h2><p>Consulte as abas da planilha para ver as informações do torneio.</p></div></div><iframe class="sheet-frame" title="Planilha de classificação, programação e resultados" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSq-w2wUNWlf3R4GK6U5rmWAfYoIxGNg8QlYTZTb67-whigV7VzEDKX6-whQTQNJztisW4lXpc3UvvI/pubhtml" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe></section>
   </section>
 
   <section id="mediaView" class="view-panel" aria-label="Fotos do torneio" hidden>
@@ -629,6 +686,34 @@ body { position:static !important; height:auto !important; min-height:100% !impo
     seconds.textContent = String(total % 60).padStart(2,'0');
   }
   tick(); window.setInterval(tick,1000);
+})();
+</script>
+
+
+<script id="vogville-tournament-redesign-js">
+(function(){
+  const hub=document.getElementById('tournamentHub');
+  if(!hub)return;
+  const tabs=[...hub.querySelectorAll('[data-hub-tab]')];
+  const panels=[...hub.querySelectorAll('[data-hub-panel]')];
+  function activate(name){
+    tabs.forEach(btn=>{
+      const active=btn.dataset.hubTab===name;
+      btn.classList.toggle('active',active);
+      btn.setAttribute('aria-selected',active?'true':'false');
+    });
+    panels.forEach(panel=>panel.classList.toggle('active',panel.dataset.hubPanel===name));
+    if(name==='classificacao'){
+      const frame=hub.querySelector('#planilha iframe');
+      if(frame && !frame.dataset.loaded){frame.dataset.loaded='1';}
+    }
+  }
+  tabs.forEach(btn=>btn.addEventListener('click',()=>activate(btn.dataset.hubTab)));
+  hub.querySelectorAll('.hub-go-sheet').forEach(btn=>btn.addEventListener('click',()=>{
+    activate('classificacao');
+    const target=hub.querySelector('#planilha');
+    if(target)target.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+  }));
 })();
 </script>
 
