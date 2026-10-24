@@ -354,6 +354,23 @@ html { scroll-padding-top: 12px !important; }
 @media(max-width:700px){.tournament-hub .hub-tabs{gap:6px}.tournament-hub .hub-tab{padding:10px 8px;min-height:82px}.tournament-hub .hub-tab strong{font-size:12px}.tournament-hub .hub-tab small{font-size:10px}.tournament-hub .hub-card-grid{grid-template-columns:1fr}.tournament-hub .hub-intro h2{font-size:19px}}
 </style>
 
+
+<style id="photo-navigation-and-event-comments">
+.photo-lightbox-nav{position:fixed;z-index:100001;top:50%;transform:translateY(-50%);width:52px;height:64px;border:1px solid #ffffff80;border-radius:13px;background:#071f36d9;color:#fff;font:700 48px/1 Arial,sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 14px #0006}
+.photo-lightbox-prev{left:max(12px,env(safe-area-inset-left))}.photo-lightbox-next{right:max(12px,env(safe-area-inset-right))}
+.photo-lightbox-nav:hover,.photo-lightbox-nav:focus-visible{background:#087a59;outline:2px solid #f0c34e;outline-offset:2px}
+.photo-position{color:#dce6ef;font-size:12px;min-height:16px}
+.event-comment-widget{position:fixed;right:18px;bottom:18px;z-index:9000;font-family:Arial,Helvetica,sans-serif}
+.event-comment-toggle{display:flex;align-items:center;gap:8px;max-width:min(330px,calc(100vw - 24px));padding:13px 17px;border:2px solid #f0c34e;border-radius:999px;background:#071f36;color:#fff;font-size:13px;font-weight:800;box-shadow:0 5px 20px #071f3640;cursor:pointer}
+.event-comment-toggle:hover,.event-comment-toggle:focus-visible{background:#087a59;outline:3px solid #f0c34e66;outline-offset:2px}
+.event-comment-panel{position:absolute;right:0;bottom:calc(100% + 10px);width:min(360px,calc(100vw - 24px));padding:20px 16px 16px;border:1px solid #d5a94c;border-radius:16px;background:#fff;color:#17324d;box-shadow:0 12px 34px #071f3640}
+.event-comment-panel h2{margin:0 30px 8px 0;font-size:18px;color:#071f36}.event-comment-panel>p{margin:0 0 14px;font-size:12px;line-height:1.5;color:#52687b}
+.event-comment-close{position:absolute;right:9px;top:8px;border:0;background:transparent;color:#17324d;font-size:25px;cursor:pointer}
+#eventCommentForm{display:grid;gap:7px}#eventCommentForm label{font-size:12px;font-weight:800}#eventCommentForm input,#eventCommentForm textarea{width:100%;padding:11px;border:1px solid #cbd7e2;border-radius:8px;font:14px Arial,sans-serif;color:#17324d}#eventCommentForm textarea{min-height:95px;resize:vertical}
+.event-comment-submit{padding:12px;border:0;border-radius:8px;background:#087a59;color:#fff;font-weight:800;cursor:pointer}#eventCommentStatus{margin:4px 0 0;min-height:18px;font-size:12px;line-height:1.4;color:#52687b}
+@media(max-width:700px){.photo-lightbox-nav{width:40px;height:52px;font-size:38px;border-radius:10px}.photo-lightbox-prev{left:5px}.photo-lightbox-next{right:5px}.photo-lightbox img{max-width:88vw!important}.event-comment-widget{right:10px;bottom:10px}.event-comment-toggle{padding:11px 13px;font-size:12px}.event-comment-panel{right:0}}
+</style>
+
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
@@ -480,7 +497,27 @@ html { scroll-padding-top: 12px !important; }
   </div>
 </div>
 
-<div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this)closePhotoLightbox()"> <button class="photo-lightbox-close" type="button" aria-label="Fechar foto" onclick="closePhotoLightbox()">×</button> <div class="photo-lightbox-inner"><img id="lightboxImage" alt=""><div id="lightboxCaption" class="photo-lightbox-caption"></div><section class="photo-comments" aria-label="Comentários da foto"><h3>💬 Comentários</h3><div id="photoCommentList" class="comment-list">Carregando comentários…</div><form id="photoCommentForm" class="comment-form"><div><label for="commentName">Seu nome</label><input id="commentName" maxlength="60" required placeholder="Como podemos chamar você?"></div><div><label for="commentText">Comentário</label><textarea id="commentText" maxlength="500" required placeholder="Escreva um comentário respeitoso (até 500 caracteres)"></textarea></div><button type="submit">Publicar comentário</button><div id="commentStatus" class="comment-status" aria-live="polite"></div></form><p class="comment-status">Os comentários são públicos. Não informe telefone, endereço ou outros dados pessoais.</p></section></div> </div> 
+<div id="photoLightbox" class="photo-lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada" onclick="if(event.target===this)closePhotoLightbox()">
+  <button class="photo-lightbox-close" type="button" aria-label="Fechar foto" onclick="closePhotoLightbox()">×</button>
+  <button class="photo-lightbox-nav photo-lightbox-prev" type="button" aria-label="Foto anterior" onclick="navigatePhoto(-1)">‹</button>
+  <div class="photo-lightbox-inner"><img id="lightboxImage" alt=""><div id="lightboxCaption" class="photo-lightbox-caption"></div><div id="photoPosition" class="photo-position" aria-live="polite"></div></div>
+  <button class="photo-lightbox-nav photo-lightbox-next" type="button" aria-label="Próxima foto" onclick="navigatePhoto(1)">›</button>
+</div>
+
+<div id="eventCommentWidget" class="event-comment-widget">
+  <button type="button" id="eventCommentToggle" class="event-comment-toggle" aria-expanded="false" aria-controls="eventCommentPanel"><span aria-hidden="true">💬</span> Deixe seu comentário do evento</button>
+  <section id="eventCommentPanel" class="event-comment-panel" hidden aria-label="Comentário sobre o evento">
+    <button type="button" id="eventCommentClose" class="event-comment-close" aria-label="Fechar formulário">×</button>
+    <h2>💬 Deixe seu comentário do evento</h2>
+    <p>Compartilhe sua experiência no 2º Open de Tênis Vog Ville. Seu comentário será enviado para aprovação da organização.</p>
+    <form id="eventCommentForm">
+      <label for="eventCommentName">Seu nome</label><input id="eventCommentName" maxlength="60" required placeholder="Como podemos chamar você?">
+      <label for="eventCommentText">Seu comentário</label><textarea id="eventCommentText" maxlength="500" required placeholder="Conte como foi sua experiência (até 500 caracteres)"></textarea>
+      <button type="submit" class="event-comment-submit">Enviar para aprovação</button>
+      <p id="eventCommentStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+</div> 
 <footer class="site-footer">
   <div>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</div>
   <div class="developer-credit">Desenvolvido por <a href="https://tcpsolucoes.com/" target="_blank" rel="noopener noreferrer">TCP Soluções em TI</a></div>
@@ -550,14 +587,51 @@ menu.querySelectorAll('.menu-group-toggle').forEach(function(btn){btn.addEventLi
  window.vogVilleVisitCallback=function(data){visitBusy=false;if(data&&data.ok&&typeof data.visits==='number'){const today=typeof data.todayVisits==='number'?data.todayVisits:'—';const display='Total: '+data.visits+' · Hoje: '+today;visits.textContent=display;try{sessionStorage.setItem('vogVilleVisitCounted','1');sessionStorage.setItem('vogVilleVisitDisplay',display)}catch(e){}}else{visits.textContent='Visitas: indisponíveis'}};
  function countVisit(){if(visitBusy)return;try{const cached=sessionStorage.getItem('vogVilleVisitDisplay');if(sessionStorage.getItem('vogVilleVisitCounted')&&cached){visits.textContent=cached;return}}catch(e){}visitBusy=true;const old=document.getElementById('visitJsonp');if(old)old.remove();const script=document.createElement('script');script.id='visitJsonp';script.onerror=function(){visitBusy=false;visits.textContent='Visitas: indisponíveis';script.remove()};script.src=API+'?api=visit&callback=vogVilleVisitCallback&t='+Date.now();document.body.appendChild(script)}
  countVisit();ping();setInterval(ping,30000);document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')ping()});
-})(); let currentCommentPhotoId='';
-function jsonp(params,callbackName){const old=document.getElementById('commentsJsonp');if(old)old.remove();const script=document.createElement('script');script.id='commentsJsonp';params.callback=callbackName;params.t=Date.now();script.onerror=function(){if(callbackName==='vogPhotoCommentsLoaded')document.getElementById('photoCommentList').textContent='Não foi possível carregar os comentários.';if(callbackName==='vogPhotoCommentAdded')document.getElementById('commentStatus').textContent='Não foi possível enviar. Tente novamente.';script.remove()};script.src='https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?'+new URLSearchParams(params).toString();document.body.appendChild(script)}
-window.vogPhotoCommentsLoaded=function(data){const el=document.getElementById('photoCommentList');if(!el)return;if(!Array.isArray(data)||!data.length){el.textContent='Seja a primeira pessoa a comentar esta foto.';return}el.innerHTML=data.map(c=>'<article class="comment-item"><strong>'+escapeCommentHtml(c.name)+'</strong><p>'+escapeCommentHtml(c.text)+'</p><time>'+escapeCommentHtml(c.date||'')+'</time></article>').join('')};
-window.vogPhotoCommentAdded=function(data){const status=document.getElementById('commentStatus');if(data&&data.ok){document.getElementById('commentText').value='';status.textContent='Comentário enviado para aprovação da organização. Ele ficará visível após ser aprovado.';document.getElementById('photoCommentList').textContent='Seu comentário está aguardando aprovação.'}else{status.textContent=(data&&data.error)||'Não foi possível publicar o comentário.'}};
+})(); let vogPhotos = [];
+let currentPhotoIndex = -1;
 function escapeCommentHtml(v){return String(v||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-document.getElementById('photoCommentForm').addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('commentName').value.trim(),text=document.getElementById('commentText').value.trim(),status=document.getElementById('commentStatus');if(!currentCommentPhotoId){status.textContent='Selecione uma foto.';return}if(!name||!text){status.textContent='Preencha seu nome e comentário.';return}status.textContent='Enviando comentário…';jsonp({api:'addComment',photoId:currentCommentPhotoId,name:name,text:text},'vogPhotoCommentAdded')});
-function openPhotoLightbox(photoId,url,title,caption){const modal=document.getElementById('photoLightbox');currentCommentPhotoId=photoId||'';const img=document.getElementById('lightboxImage');img.src=url;img.alt=title||'Foto do torneio';document.getElementById('lightboxCaption').textContent=[title,caption].filter(Boolean).join(' — ');document.getElementById('photoCommentList').textContent='Carregando comentários…';document.getElementById('commentStatus').textContent='';document.getElementById('commentText').value='';modal.classList.add('open');document.body.style.overflow='hidden';if(currentCommentPhotoId)jsonp({api:'comments',photoId:currentCommentPhotoId},'vogPhotoCommentsLoaded');else document.getElementById('photoCommentList').textContent='Comentários indisponíveis para esta foto.'}
-function closePhotoLightbox(){const modal=document.getElementById('photoLightbox');modal.classList.remove('open');document.body.style.overflow='';document.getElementById('lightboxImage').src='';currentCommentPhotoId=''} document.addEventListener('keydown',function(event){if(event.key==='Escape')closePhotoLightbox()}); </script>  
+function openPhotoLightbox(photoId,url,title,caption,index){
+  const modal=document.getElementById('photoLightbox');
+  currentPhotoIndex=Number.isInteger(index)?index:vogPhotos.findIndex(p=>String(p.id||'')===String(photoId||''));
+  renderCurrentPhoto();modal.classList.add('open');document.body.style.overflow='hidden';
+}
+function renderCurrentPhoto(){
+  if(currentPhotoIndex<0||currentPhotoIndex>=vogPhotos.length)return;
+  const p=vogPhotos[currentPhotoIndex],img=document.getElementById('lightboxImage');
+  img.src=p.photoUrl||'';img.alt=p.title||'Foto do torneio';
+  document.getElementById('lightboxCaption').textContent=[p.title,p.text].filter(Boolean).join(' — ');
+  document.getElementById('photoPosition').textContent=(currentPhotoIndex+1)+' de '+vogPhotos.length;
+  const prev=document.querySelector('.photo-lightbox-prev'),next=document.querySelector('.photo-lightbox-next');
+  prev.disabled=vogPhotos.length<2;next.disabled=vogPhotos.length<2;
+}
+function navigatePhoto(direction){if(vogPhotos.length<2)return;currentPhotoIndex=(currentPhotoIndex+direction+vogPhotos.length)%vogPhotos.length;renderCurrentPhoto()}
+function closePhotoLightbox(){const modal=document.getElementById('photoLightbox');modal.classList.remove('open');document.body.style.overflow='';document.getElementById('lightboxImage').src='';currentPhotoIndex=-1}
+document.addEventListener('keydown',function(event){const modal=document.getElementById('photoLightbox');if(!modal.classList.contains('open'))return;if(event.key==='Escape')closePhotoLightbox();else if(event.key==='ArrowLeft')navigatePhoto(-1);else if(event.key==='ArrowRight')navigatePhoto(1)});
+(function(){
+ const API='https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec';
+ function esc(s){return String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ function showError(){['gallery','videosList','notices'].forEach(id=>{const el=document.getElementById(id);if(el)el.innerHTML='<p>Não foi possível carregar agora. Tente atualizar a página.</p>'})}
+ window.vogVillePostsLoaded=function(data){
+  const posts=Array.isArray(data)?data:((data&&Array.isArray(data.posts))?data.posts:[]);
+  vogPhotos=posts.filter(p=>p.type==='foto');const videos=posts.filter(p=>p.type==='video'),notices=posts.filter(p=>p.type==='aviso');
+  const gallery=document.getElementById('gallery'),videosEl=document.getElementById('videosList'),noticesEl=document.getElementById('notices');
+  if(gallery)gallery.innerHTML=vogPhotos.length?vogPhotos.map((p,i)=>'<button type="button" class="photo-thumb" data-photo-index="'+i+'" aria-label="Ampliar foto: '+esc(p.title)+'"><img loading="lazy" src="'+esc(p.photoUrl)+'" alt="'+esc(p.title)+'"><strong>'+esc(p.title)+'</strong></button>').join(''):'<p>Nenhuma foto publicada ainda.</p>';
+  if(videosEl)videosEl.innerHTML=videos.length?'<div class="video-thumb-grid">'+videos.map(p=>'<article class="video-card"><button type="button" class="video-thumb" data-video-url="'+esc(p.videoUrl||p.photoUrl||'')+'" data-video-title="'+esc(p.title)+'" data-video-caption="'+esc(p.text)+'" aria-label="Assistir vídeo: '+esc(p.title)+'"><span class="video-thumb-image">'+(p.photoUrl?'<img loading="lazy" src="'+esc(p.photoUrl)+'" alt="Miniatura do vídeo '+esc(p.title)+'">':'<span class="video-no-image">Vídeo</span>')+'<span class="video-play-icon" aria-hidden="true">▶</span></span><strong>'+esc(p.title)+'</strong></button><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join('')+'</div>':'<p>Nenhum vídeo publicado ainda.</p>';
+  if(noticesEl)noticesEl.innerHTML=notices.length?notices.map(p=>'<article class="public-post"><h4>📢 '+esc(p.title)+'</h4><p>'+esc(p.text)+'</p><time>'+esc(dateText(p.date))+'</time></article>').join(''):'<p>Nenhum aviso publicado ainda.</p>';
+  const preview=document.getElementById('homeNewsPreview');if(preview)preview.innerHTML=notices.length?'<article class="public-post"><h4>📢 '+esc(notices[0].title)+'</h4><p>'+esc(notices[0].text)+'</p><time>'+esc(dateText(notices[0].date))+'</time></article>':'';
+ };
+ function dateText(s){if(!s)return '';const d=new Date(s);return isNaN(d)?s:d.toLocaleDateString('pt-BR')}
+ function load(){const s=document.createElement('script');s.src=API+'?api=posts&callback=vogVillePostsLoaded&t='+Date.now();s.onerror=showError;document.body.appendChild(s)}
+ document.addEventListener('click',function(event){const thumb=event.target.closest('.photo-thumb');if(thumb){openPhotoLightbox('', '', '', '', Number(thumb.dataset.photoIndex));return}});load();
+})();
+(function(){
+ const API='https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec';
+ const toggle=document.getElementById('eventCommentToggle'),panel=document.getElementById('eventCommentPanel'),close=document.getElementById('eventCommentClose'),form=document.getElementById('eventCommentForm'),status=document.getElementById('eventCommentStatus');
+ function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('eventCommentName').focus()}
+ toggle.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));
+ function eventCommentCallback(data){const button=form.querySelector('button[type="submit"]');button.disabled=false;if(data&&data.ok){form.reset();status.textContent='Comentário enviado para aprovação da organização. Obrigado!'}else{status.textContent=(data&&data.error)||'Não foi possível enviar o comentário. A integração pode precisar de suporte no Apps Script.'}}
+ form.addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('eventCommentName').value.trim(),comment=document.getElementById('eventCommentText').value.trim();if(!name||!comment)return;status.textContent='Enviando para aprovação…';const button=form.querySelector('button[type="submit"]');button.disabled=true;const old=document.getElementById('eventCommentJsonp');if(old)old.remove();window.vogEventCommentAdded=eventCommentCallback;const script=document.createElement('script');script.id='eventCommentJsonp';script.onerror=function(){button.disabled=false;status.textContent='Não foi possível enviar. O Apps Script precisa aceitar comentários gerais do evento.';script.remove()};const params=new URLSearchParams({api:'addComment',photoId:'evento',name:name,text:comment,callback:'vogEventCommentAdded',t:String(Date.now())});script.src=API+'?'+params.toString();document.body.appendChild(script)});
+})();
 <script>
 (function(){
  const menu=document.querySelector('.admin-menu');
