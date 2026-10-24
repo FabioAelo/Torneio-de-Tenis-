@@ -505,18 +505,8 @@ html { scroll-padding-top: 12px !important; }
 </div>
 
 <div id="eventCommentWidget" class="event-comment-widget">
-  <button type="button" id="eventCommentToggle" class="event-comment-toggle" aria-expanded="false" aria-controls="eventCommentPanel"><span aria-hidden="true">💬</span> Deixe seu comentário do evento</button>
-  <section id="eventCommentPanel" class="event-comment-panel" hidden aria-label="Comentário sobre o evento">
-    <button type="button" id="eventCommentClose" class="event-comment-close" aria-label="Fechar formulário">×</button>
-    <h2>💬 Deixe seu comentário do evento</h2>
-    <p>Compartilhe sua experiência no 2º Open de Tênis Vog Ville. Seu comentário será enviado para aprovação da organização.</p>
-    <form id="eventCommentForm">
-      <label for="eventCommentName">Seu nome</label><input id="eventCommentName" maxlength="60" required placeholder="Como podemos chamar você?">
-      <label for="eventCommentText">Seu comentário</label><textarea id="eventCommentText" maxlength="500" required placeholder="Conte como foi sua experiência (até 500 caracteres)"></textarea>
-      <button type="submit" class="event-comment-submit">Enviar para aprovação</button>
-      <p id="eventCommentStatus" role="status" aria-live="polite"></p>
-    </form>
-  </section>
+  <a href="comentarios_evento_vogville.html" class="event-comment-toggle" style="display:block;text-align:center;text-decoration:none" aria-label="Abrir página de comentários do evento"><span aria-hidden="true">💬</span> Comentários do evento</a>
+
 </div> 
 <footer class="site-footer">
   <div>2º Open de Tênis · Condomínio Vog Ville · 24 de outubro a 1º de novembro de 2026</div>
@@ -624,14 +614,8 @@ document.addEventListener('keydown',function(event){const modal=document.getElem
  function load(){const s=document.createElement('script');s.src=API+'?api=posts&callback=vogVillePostsLoaded&t='+Date.now();s.onerror=showError;document.body.appendChild(s)}
  document.addEventListener('click',function(event){const thumb=event.target.closest('.photo-thumb');if(thumb){openPhotoLightbox('', '', '', '', Number(thumb.dataset.photoIndex));return}});load();
 })();
-(function(){
- const API='https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec';
- const toggle=document.getElementById('eventCommentToggle'),panel=document.getElementById('eventCommentPanel'),close=document.getElementById('eventCommentClose'),form=document.getElementById('eventCommentForm'),status=document.getElementById('eventCommentStatus');
- function setOpen(open){panel.hidden=!open;toggle.setAttribute('aria-expanded',String(open));if(open)document.getElementById('eventCommentName').focus()}
- toggle.addEventListener('click',()=>setOpen(panel.hidden));close.addEventListener('click',()=>setOpen(false));
- function eventCommentCallback(data){const button=form.querySelector('button[type="submit"]');button.disabled=false;if(data&&data.ok){form.reset();status.textContent='Comentário enviado para aprovação da organização. Obrigado!'}else{status.textContent=(data&&data.error)||'Não foi possível enviar o comentário. A integração pode precisar de suporte no Apps Script.'}}
- form.addEventListener('submit',function(e){e.preventDefault();const name=document.getElementById('eventCommentName').value.trim(),comment=document.getElementById('eventCommentText').value.trim();if(!name||!comment)return;status.textContent='Enviando para aprovação…';const button=form.querySelector('button[type="submit"]');button.disabled=true;const old=document.getElementById('eventCommentJsonp');if(old)old.remove();window.vogEventCommentAdded=eventCommentCallback;const script=document.createElement('script');script.id='eventCommentJsonp';script.onerror=function(){button.disabled=false;status.textContent='Não foi possível enviar. O Apps Script precisa aceitar comentários gerais do evento.';script.remove()};const params=new URLSearchParams({api:'addComment',photoId:'evento',name:name,text:comment,callback:'vogEventCommentAdded',t:String(Date.now())});script.src=API+'?'+params.toString();document.body.appendChild(script)});
-})();
+;
+</script>
 <script>
 (function(){
  const menu=document.querySelector('.admin-menu');
