@@ -11,10 +11,15 @@
 <main class="wrap"><section class="formbox"><h2>Deixe seu comentário</h2><p>Compartilhe sua mensagem sobre o 2º Open de Tênis Vog Ville.</p><form id="eventCommentForm" novalidate><div class="field"><label for="eventName">Seu nome</label><input id="eventName" name="name" maxlength="80" autocomplete="name" required placeholder="Digite seu nome"></div><div class="field"><label for="eventPhone">Celular / WhatsApp com DDD</label><input id="eventPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" required placeholder="Ex.: (71) 99999-9999"><small style="color:var(--muted)">Seu número será usado apenas para responder à sua mensagem e não deve aparecer publicamente.</small></div><div class="field"><label for="eventText">Seu comentário</label><textarea id="eventText" name="text" maxlength="1500" required placeholder="Escreva seu comentário aqui..."></textarea></div><button class="send" id="sendComment" type="submit">Enviar comentário</button><div class="formstatus" id="formStatus" role="status" aria-live="polite"></div></form></section><div class="toolbar"><div class="count" id="count">Comentários recebidos</div><button class="refresh" id="refresh" type="button">↻ Atualizar comentários</button></div><div class="status" id="status" role="status">Carregando comentários…</div><section class="list" id="comments" aria-live="polite"></section><footer>Área de consulta dos comentários gerais do evento.</footer></main>
 <script>
 (function(){
- const API='https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec';
+ const API='https://script.google.com/macros/s/AKfycbzI38BdMjaU0iqOIETWrGfNgkbeYacDXsdm1G8lL07bl0LB1sop6mX7_wgKjYHE3E0/exec';
  const list=document.getElementById('comments'),status=document.getElementById('status'),count=document.getElementById('count'),refresh=document.getElementById('refresh');
  const form=document.getElementById('eventCommentForm'),formStatus=document.getElementById('formStatus'),send=document.getElementById('sendComment');
  let submitTimer=null;
+
+
+
+
+ 
  function setStatus(msg){formStatus.textContent=msg;}
  window.vogEventCommentAdded=function(data){
    if(submitTimer) clearTimeout(submitTimer); submitTimer=null; send.disabled=false;
