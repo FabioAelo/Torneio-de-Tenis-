@@ -512,6 +512,18 @@ body {
 }
 </style>
 
+
+<style id="vogville-scroll-final-fix">
+/* Correção definitiva: cabeçalho e barras fazem parte do fluxo normal da página. */
+html, body { scroll-padding-top: 0 !important; }
+body { padding-top: 0 !important; }
+.site-header { position: relative !important; top: auto !important; left: auto !important; right: auto !important; width: 100% !important; }
+.bottom-tabs { position: relative !important; top: auto !important; bottom: auto !important; left: auto !important; right: auto !important; transform: none !important; width: 100% !important; margin: 0 !important; }
+@media (max-width: 700px) {
+  .site-header { position: relative !important; top: auto !important; }
+  .bottom-tabs { position: relative !important; bottom: auto !important; }
+}
+</style>
 </head> <body id="topo"> <div class="site-header">   <div class="top">     <div class="wrap">       <img class="brand" src="logo-torneio.png" alt="Banner oficial do 2º Open de Tênis do Condomínio Vog Ville" loading="eager" fetchpriority="high">     </div>   <nav aria-label="Área administrativa" class="main-nav" id="mainNav">
   <section class="menu-group collapsed"><button class="menu-group-toggle" type="button" aria-expanded="false">⚙️ <span>Área administrativa</span><span class="menu-chevron">⌄</span></button><div class="menu-group-items"><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec" target="_blank" rel="noopener noreferrer">🎾 Placar ao vivo — lançar pontos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">▶ Vídeos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">📸 Fotos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=posts" target="_blank" rel="noopener noreferrer">📢 Avisos <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbz0seqp95tXgCqL7pksR8OuHJbnewr_LR9X6hXzLCXdZht9FQ1Il1V8zC1nW3bUXyc/exec?page=sorteio" target="_blank" rel="noopener noreferrer">🎁 Sorteios <span>›</span></a><a href="https://script.google.com/macros/s/AKfycbwke62UI5d7gY95g4mv12TILrjgu0f1mkUDFm2Se4yZXpXnYv5WKgd0Q5KDnI1kKQE/exec?page=sorteio#patrocinador" target="_blank" rel="noopener noreferrer">🤝 Cadastro e publicação de patrocinadores <span>›</span></a></div></section>
 </nav> </nav> <nav class="bottom-tabs" aria-label="Navegação principal">
